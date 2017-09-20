@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iOS中UIWebView与JavaScript交互 - LongerONE的博客</title>
+    <meta name="author"  content="LongerONE">
+    <meta name="description" content="iOS中UIWebView与JavaScript交互">
+    <meta name="keywords"  content="iOS, JavaScript, JS">
+    <!-- Open Graph -->
+    <meta property="og:title" content="iOS中UIWebView与JavaScript交互 - LongerONE的博客">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://localhost:4000/ios%E5%BC%80%E5%8F%91%E6%89%8B%E6%9C%AD/2016/05/16/iOS%E4%B8%8EJavaScript%E4%BA%A4%E4%BA%92.html">
+    <meta property="og:description" content="一名逗比的iOS开发者">
+    <meta property="og:site_name" content="LongerONE的博客">
+    <link rel="stylesheet" href="//cdn.staticfile.org/normalize/6.0.0/normalize.min.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_roc50gemkxpw4s4i.css">
+    <link rel="stylesheet" href="/assets/css/github-markdown.css">
+    <link rel="stylesheet" href="/assets/css/prism.css">
+    <link rel="stylesheet" href="/assets/css/share.min.css">
+    <link rel="stylesheet" href="/assets/css/app.min.css">
+</head>
+<body>
+    <!--[if lt IE 10]>
+<div class="alert-danger" role="alert">你的浏览器实在太太太旧了，放学别走，升级完浏览器再说！<a target="_blank" class="alert-link" href="http://browsehappy.com">立即升级</a></div>
+<![endif]-->
+<input id="nm-switch" type="hidden" value="true">
+
+<header class="g-header">
+    <div class="g-logo">
+        <a href="/"></a>
+    </div>
+    <i id="menu-toggle" class="iconfont icon-menu"></i>
+    <nav class="g-nav">
+        <ul>
+            
+            <li><a href="/">home</a></li>
+            
+            <li><a href="/tags.html">tags</a></li>
+            
+        </ul>
+    </nav>
+</header>
+
+<header class="g-banner post-header post-pattern-food bgcolor-default " data-theme="default">
+    <div class="post-wrapper">
+        <div class="post-tags">
+             
+            
+            <a href="/tags#iOS" class="post-tag">iOS</a>
+            
+            <a href="/tags#JavaScript" class="post-tag">JavaScript</a>
+            
+            <a href="/tags#JS" class="post-tag">JS</a>
+            
+            
+        </div>
+        <h1>iOS中UIWebView与JavaScript交互</h1>
+        <div class="post-meta">
+            <span class="post-meta-item"><i class="iconfont icon-author"></i><a href="http://localhost:4000" target="_blank" rel="author">LongerONE</a></></span>
+            <time class="post-meta-item" datetime="16-05-16"><i class="iconfont icon-date"></i>17 May 2016</time>
+        </div>
+    </div>
+    
+    <div class="filter"></div>
+    <div class="post-cover" style="background: url('') center no-repeat; background-size: cover;">
+    
+</header>
+
+<div class="post-content">
+    
+    <h2 class="post-subtitle"></h2>
+    
+    <article class="markdown-body">
+        <p>最近几年<strong>html5</strong>人气颇高，在众多的大小项目中都有应用，而原生的<strong>iOS</strong>与<strong>JavaScript</strong>的交互也至关重要。这里就总结下个人的使用心得及方法。</p>
+
+<h2 id="核心方法">核心方法</h2>
+
+<pre><code class="language-objectivec">- (nullable NSString *)stringByEvaluatingJavaScriptFromString:(NSString *)script;
+</code></pre>
+
+<!-- more -->
+<p>该方法可在<strong>html5</strong>页面中插入<strong>JavaScript</strong>代码并执行，通常在<strong>UIWebViewDelegate</strong>的方法中使用：</p>
+
+<pre><code class="language-objectivec">- (void)webViewDidFinishLoad:(UIWebView *)webView;
+- (void)webViewDidStartLoad:(UIWebView *)webView;
+</code></pre>
+
+<h2 id="1取值">1.取值</h2>
+<p>通过<strong>JavaScript</strong>来获取网页中的值并返回，比如:</p>
+<h3 id="11获取网页的标题">1.1获取网页的标题</h3>
+<p>网页代码：</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;title&gt;</span>测试iOS与JavaScript交互<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+</code></pre>
+</div>
+
+<p>iOS代码：</p>
+
+<pre><code class="language-objectivec">- (void)webViewDidFinishLoad:(UIWebView *)webView {
+    NSString *title = [webView stringByEvaluatingJavaScriptFromString:@"document.title"];
+    NSLog(@"%@",title);
+}
+</code></pre>
+
+<p>打印结果：</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>2016-05-16 21:48:59.799 testjs[1671:90047] 测试iOS与JavaScript交互
+</code></pre>
+</div>
+
+<h3 id="12获取特定变量值">1.2获取特定变量值</h3>
+<p>网页代码:</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;title&gt;</span>测试iOS与JavaScript交互<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;script&gt;</span>
+        <span class="nx">pageInfo</span> <span class="o">=</span> <span class="s1">'这是网页的说明'</span><span class="p">;</span>
+    <span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+</code></pre>
+</div>
+
+<p>iOS代码：</p>
+
+<pre><code class="language-objectivec">- (void)webViewDidFinishLoad:(UIWebView *)webView {
+    NSString *pageInfo = [webView stringByEvaluatingJavaScriptFromString:@"pageInfo"];
+    NSLog(@"pageInfo--&gt;%@",pageInfo);
+}
+</code></pre>
+
+<p>打印结果：</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>2016-05-16 21:53:13.138 testjs[1701:93549] pageInfo--&gt;这是网页的说明
+</code></pre>
+</div>
+
+<h2 id="2传值">2.传值</h2>
+<p>在页面中调用iOS定义的方法，通过跳转请求传递多个值：<br />
+网页代码：</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;title&gt;</span>测试iOS与JavaScript交互<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;script&gt;</span>
+        <span class="nx">setShareInfo</span><span class="p">(</span><span class="s1">'这是分享标题'</span><span class="p">,</span> <span class="s1">'作者:LongerONE'</span><span class="p">,</span> <span class="s1">'这是分享的信息内容'</span><span class="p">);</span>
+    <span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+</code></pre>
+</div>
+
+<p>iOS代码，在开始加载网页时插入JS代码：</p>
+
+<pre><code class="language-objectivec">- (void)webViewDidStartLoad:(UIWebView *)webView {
+    [webView stringByEvaluatingJavaScriptFromString:@"function setShareInfo(title, author, content){window.location.href = 'share:///' + title + '///' + author + '///' + content};"];
+}
+</code></pre>
+<p>在iOS中定义了一个<code class="highlighter-rouge">setShareInfo </code>的方法，而在网页加载时便会调用该方法，将多个参数插入到请求中，以便iOS拦截。</p>
+
+<p>拦截请求：</p>
+<pre><code class="language-objectivec">- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
+    NSString *requestString = [[[request URL] absoluteString] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSLog(@"%@",requestString);
+    return YES;
+}
+</code></pre>
+
+<p>打印结果:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>2016-05-16 22:33:45.856 testjs[2582:134021] share:///这是分享标题///作者:LongerONE///这是分享的信息内容
+</code></pre>
+</div>
+
+<h2 id="结语">结语</h2>
+<p>本文仅为个人理解，如有错误请海涵并留言告知。</p>
+
+    </article>
+    
+    <div class="social-share-wrapper">
+        <div class="social-share"></div>
+    </div>
+    
+</div>
+
+<section class="author-detail">
+    <section class="post-footer-item author-card">
+        <div class="avatar">
+            <img src="/assets/img/profile.png" alt="">
+        </div>
+        <div class="author-name" rel="author">LongerONE</div>
+        <div class="bio">
+            <p>iOS开发者</p>
+        </div>
+        
+        <ul class="sns-links">
+            
+            <li>
+                <a href="//weibo.com/208040425" target="_blank">
+                    <i class="iconfont icon-weibo"></i>
+                </a>
+            </li>
+            
+        </ul>
+        
+    </section>
+    <section class="post-footer-item read-next">
+        
+        <div class="read-next-item">
+            <a href="/ui%E8%AE%BE%E8%AE%A1/2016/05/17/UI%E7%BB%83%E4%B9%A0downloading.html" class="read-next-link"></a>
+            <section>
+                <span>UI练习：Downloading</span>
+                <p>首次使用布尔运算，有待加强练习。</p>
+            </section>
+            
+            <div class="filter"></div>
+            <img src="" alt="">
+            
+        </div>
+        
+         
+        <div class="read-next-item">
+            <a href="/ui%E8%AE%BE%E8%AE%A1/2016/05/12/UI%E7%BB%83%E4%B9%A0U%E7%9B%98.html" class="read-next-link"></a>
+            <section>
+                <span>UI练习：PNY 优盘</span>
+                <p>刚刚接触Sketch，细节调了一个多小时，做完蛮有成就感。</p>
+            </section>
+            
+            <div class="filter"></div>
+            <img src="" alt="">
+            
+        </div>
+        
+    </section>
+    
+    <section class="post-footer-item comment">
+        <div id="disqus_thread"></div>
+    </section>
+    
+</section>
+
+<footer class="g-footer">
+    <section>LongerONE的博客 © 2017</section>
+    <section>Powered by <a href="//jekyllrb.com">Jekyll</a> | <a href="https://github.com/kaeyleo/jekyll-theme-H2O">Theme H2O</a></section>
+</footer>
+
+<script src="/assets/js/social-share.min.js"></script>
+<script>
+    socialShare('.social-share', {
+        sites: ['wechat','weibo','douban','twitter'],
+        wechatQrcodeTitle: "分享到微信朋友圈",
+        wechatQrcodeHelper: '<p>扫码后点击右上角</p><p>将本文分享至朋友圈</p>'
+    });
+</script>
+<script>
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+/*写入自己的disqus信息*/
+s.src = 'https://liaokeyu.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+<script src="/assets/js/prism.js"></script>
+<script src="/assets/js/index.min.js"></script>
+</body>
+</html>

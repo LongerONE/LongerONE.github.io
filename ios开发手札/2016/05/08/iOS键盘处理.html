@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iOS键盘处理 - LongerONE的博客</title>
+    <meta name="author"  content="LongerONE">
+    <meta name="description" content="iOS键盘处理">
+    <meta name="keywords"  content="iOS, 键盘">
+    <!-- Open Graph -->
+    <meta property="og:title" content="iOS键盘处理 - LongerONE的博客">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://localhost:4000/ios%E5%BC%80%E5%8F%91%E6%89%8B%E6%9C%AD/2016/05/08/iOS%E9%94%AE%E7%9B%98%E5%A4%84%E7%90%86.html">
+    <meta property="og:description" content="一名逗比的iOS开发者">
+    <meta property="og:site_name" content="LongerONE的博客">
+    <link rel="stylesheet" href="//cdn.staticfile.org/normalize/6.0.0/normalize.min.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_roc50gemkxpw4s4i.css">
+    <link rel="stylesheet" href="/assets/css/github-markdown.css">
+    <link rel="stylesheet" href="/assets/css/prism.css">
+    <link rel="stylesheet" href="/assets/css/share.min.css">
+    <link rel="stylesheet" href="/assets/css/app.min.css">
+</head>
+<body>
+    <!--[if lt IE 10]>
+<div class="alert-danger" role="alert">你的浏览器实在太太太旧了，放学别走，升级完浏览器再说！<a target="_blank" class="alert-link" href="http://browsehappy.com">立即升级</a></div>
+<![endif]-->
+<input id="nm-switch" type="hidden" value="true">
+
+<header class="g-header">
+    <div class="g-logo">
+        <a href="/"></a>
+    </div>
+    <i id="menu-toggle" class="iconfont icon-menu"></i>
+    <nav class="g-nav">
+        <ul>
+            
+            <li><a href="/">home</a></li>
+            
+            <li><a href="/tags.html">tags</a></li>
+            
+        </ul>
+    </nav>
+</header>
+
+<header class="g-banner post-header post-pattern-food bgcolor-default " data-theme="default">
+    <div class="post-wrapper">
+        <div class="post-tags">
+             
+            
+            <a href="/tags#iOS" class="post-tag">iOS</a>
+            
+            <a href="/tags#键盘" class="post-tag">键盘</a>
+            
+            
+        </div>
+        <h1>iOS键盘处理</h1>
+        <div class="post-meta">
+            <span class="post-meta-item"><i class="iconfont icon-author"></i><a href="http://localhost:4000" target="_blank" rel="author">LongerONE</a></></span>
+            <time class="post-meta-item" datetime="16-05-08"><i class="iconfont icon-date"></i>08 May 2016</time>
+        </div>
+    </div>
+    
+    <div class="filter"></div>
+    <div class="post-cover" style="background: url('') center no-repeat; background-size: cover;">
+    
+</header>
+
+<div class="post-content">
+    
+    <h2 class="post-subtitle"></h2>
+    
+    <article class="markdown-body">
+        <p><img src="/images/ioskeyboard.png" alt="" /></p>
+
+<p>在iOS开发的初期，键盘处理总觉得有点生疏，使用起来不够熟练，而且还有部分小坑。今日稍作总结。</p>
+
+<p>要获取到键盘相关信息，最好的方法是通过通知获取。</p>
+
+<!-- more -->
+<h4 id="注册键盘通知">注册键盘通知</h4>
+<hr />
+<p>注册键盘在即将显示和即将隐藏时调用的方法：</p>
+
+<pre><code class="language-objectivec">- (void)registeKeyboardNotifications {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillBeHidden:) name:UIKeyboardWillHideNotification object:nil];  
+}
+</code></pre>
+<p>通知名:</p>
+
+<ul>
+  <li>UIKeyboardWillShowNotification //键盘即将显示</li>
+  <li>UIKeyboardDidShowNotification  //键盘已显示</li>
+  <li>UIKeyboardWillHideNotification  //键盘即将隐藏</li>
+  <li>UIKeyboardDidHideNotification   //键盘已隐藏</li>
+  <li>UIKeyboardWillChangeFrameNotification //键盘frame即将改变</li>
+  <li>UIKeyboardDidChangeFrameNotification  //键盘frame已改变</li>
+</ul>
+
+<p>官方说明:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>// Each notification includes a nil object and a userInfo dictionary containing the
+// begining and ending keyboard frame in screen coordinates. Use the various UIView and
+// UIWindow convertRect facilities to get the frame in the desired coordinate system.
+// Animation key/value pairs are only available for the "will" family of notification.
+</code></pre>
+</div>
+
+<p>译：每个通知包含一个<code class="highlighter-rouge">nil</code>对象、一个含有开始及结束时键盘的大小及其在屏幕的坐标的<code class="highlighter-rouge">userInfo</code>字典。 使用不同的<code class="highlighter-rouge">UIView</code> 和 <code class="highlighter-rouge">UIWindow</code>在各设备中的 <code class="highlighter-rouge">convertRect</code>来获取在期望的坐标系统中的 <code class="highlighter-rouge">frame</code>。 动画的键值对只对 <code class="highlighter-rouge">will</code> 的相关通知有效（翻译渣）。</p>
+
+<h4 id="键盘处理方法">键盘处理方法</h4>
+<hr />
+<p>键盘在即将显示时调用的方法：</p>
+
+<pre><code class="language-objectivec">- (void)keyboardWillShow:(NSNotification *)noti {
+    CGRect keyboardRect = [[[noti userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue]; //键盘尺寸
+    NSTimeInterval animationDuration = [[[noti userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];  //键盘动画时间
+    [UIView animateKeyframesWithDuration:animationDuration delay:0 options:UIViewKeyframeAnimationOptionCalculationModeLinear animations:^{
+        //上移键盘的高度
+        self.myTableView.mj_y = - keyboardRect.size.height;
+    } completion:nil];
+}
+</code></pre>
+
+<p><code class="highlighter-rouge">userInfo</code> 的key:</p>
+
+<ul>
+  <li>UIKeyboardFrameBeginUserInfoKey  //键盘起始frame</li>
+  <li>UIKeyboardFrameEndUserInfoKey   //键盘结束frame</li>
+  <li>UIKeyboardAnimationDurationUserInfoKey   //键盘动画时长</li>
+  <li>UIKeyboardAnimationCurveUserInfoKey    //键盘动画曲线</li>
+  <li>UIKeyboardIsLocalUserInfoKey      //是否显示键盘</li>
+</ul>
+
+<p><strong>注意点：在使用第三方键盘时，可能会出现键盘高度为 0 的情况，若不做判断处理，视图将会出现异常。</strong></p>
+
+<p>键盘即将隐藏时调用的方法：</p>
+
+<pre><code class="language-objectivec">- (void)keyboardWillBeHidden:(NSNotification *)noti {
+    NSTimeInterval animationDuration = [[[noti userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];  //键盘动画时间
+    [UIView animateKeyframesWithDuration:animationDuration delay:0 options:UIViewKeyframeAnimationOptionCalculationModeLinear animations:^{
+        self.myTableView.mj_y = 0;
+    } completion:nil];
+}
+</code></pre>
+<h4 id="移除键盘通知注册">移除键盘通知注册</h4>
+<hr />
+<pre><code class="language-objectivec">- (void)unregisteKeyboardNotification {
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
+}
+</code></pre>
+
+
+    </article>
+    
+    <div class="social-share-wrapper">
+        <div class="social-share"></div>
+    </div>
+    
+</div>
+
+<section class="author-detail">
+    <section class="post-footer-item author-card">
+        <div class="avatar">
+            <img src="/assets/img/profile.png" alt="">
+        </div>
+        <div class="author-name" rel="author">LongerONE</div>
+        <div class="bio">
+            <p>iOS开发者</p>
+        </div>
+        
+        <ul class="sns-links">
+            
+            <li>
+                <a href="//weibo.com/208040425" target="_blank">
+                    <i class="iconfont icon-weibo"></i>
+                </a>
+            </li>
+            
+        </ul>
+        
+    </section>
+    <section class="post-footer-item read-next">
+        
+        <div class="read-next-item">
+            <a href="/ui%E8%AE%BE%E8%AE%A1/2016/05/10/UI%E7%BB%83%E4%B9%A0ipod%E5%9B%BE%E6%A0%87.html" class="read-next-link"></a>
+            <section>
+                <span>UI练习：iPod Shuffle 4 图标</span>
+                <p>ipod图标一枚。</p>
+            </section>
+            
+            <div class="filter"></div>
+            <img src="" alt="">
+            
+        </div>
+        
+         
+        <div class="read-next-item">
+            <a href="/%E6%99%BA%E7%94%9F%E6%B4%BB/2016/05/06/SublimeText3%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E6%80%BB%E7%BB%93.html" class="read-next-link"></a>
+            <section>
+                <span>Sublime Text 3 使用技巧总结</span>
+                <p></p>
+            </section>
+            
+            <div class="filter"></div>
+            <img src="" alt="">
+            
+        </div>
+        
+    </section>
+    
+    <section class="post-footer-item comment">
+        <div id="disqus_thread"></div>
+    </section>
+    
+</section>
+
+<footer class="g-footer">
+    <section>LongerONE的博客 © 2017</section>
+    <section>Powered by <a href="//jekyllrb.com">Jekyll</a> | <a href="https://github.com/kaeyleo/jekyll-theme-H2O">Theme H2O</a></section>
+</footer>
+
+<script src="/assets/js/social-share.min.js"></script>
+<script>
+    socialShare('.social-share', {
+        sites: ['wechat','weibo','douban','twitter'],
+        wechatQrcodeTitle: "分享到微信朋友圈",
+        wechatQrcodeHelper: '<p>扫码后点击右上角</p><p>将本文分享至朋友圈</p>'
+    });
+</script>
+<script>
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+/*写入自己的disqus信息*/
+s.src = 'https://liaokeyu.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+<script src="/assets/js/prism.js"></script>
+<script src="/assets/js/index.min.js"></script>
+</body>
+</html>

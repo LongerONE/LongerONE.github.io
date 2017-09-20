@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft客户端整合基础教程 - LongerONE的博客</title>
+    <meta name="author"  content="LongerONE">
+    <meta name="description" content="Minecraft客户端整合基础教程">
+    <meta name="keywords"  content="Minecraft, 客户端, 整合包">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Minecraft客户端整合基础教程 - LongerONE的博客">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://localhost:4000/minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B%E7%B3%BB%E5%88%97/2016/04/20/Minecraft%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%95%B4%E5%90%88%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B.html">
+    <meta property="og:description" content="一名逗比的iOS开发者">
+    <meta property="og:site_name" content="LongerONE的博客">
+    <link rel="stylesheet" href="//cdn.staticfile.org/normalize/6.0.0/normalize.min.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_roc50gemkxpw4s4i.css">
+    <link rel="stylesheet" href="/assets/css/github-markdown.css">
+    <link rel="stylesheet" href="/assets/css/prism.css">
+    <link rel="stylesheet" href="/assets/css/share.min.css">
+    <link rel="stylesheet" href="/assets/css/app.min.css">
+</head>
+<body>
+    <!--[if lt IE 10]>
+<div class="alert-danger" role="alert">你的浏览器实在太太太旧了，放学别走，升级完浏览器再说！<a target="_blank" class="alert-link" href="http://browsehappy.com">立即升级</a></div>
+<![endif]-->
+<input id="nm-switch" type="hidden" value="true">
+
+<header class="g-header">
+    <div class="g-logo">
+        <a href="/"></a>
+    </div>
+    <i id="menu-toggle" class="iconfont icon-menu"></i>
+    <nav class="g-nav">
+        <ul>
+            
+            <li><a href="/">home</a></li>
+            
+            <li><a href="/tags.html">tags</a></li>
+            
+        </ul>
+    </nav>
+</header>
+
+<header class="g-banner post-header post-pattern-food bgcolor-default " data-theme="default">
+    <div class="post-wrapper">
+        <div class="post-tags">
+             
+            
+            <a href="/tags#Minecraft" class="post-tag">Minecraft</a>
+            
+            <a href="/tags#客户端" class="post-tag">客户端</a>
+            
+            <a href="/tags#整合包" class="post-tag">整合包</a>
+            
+            
+        </div>
+        <h1>Minecraft客户端整合基础教程</h1>
+        <div class="post-meta">
+            <span class="post-meta-item"><i class="iconfont icon-author"></i><a href="http://localhost:4000" target="_blank" rel="author">LongerONE</a></></span>
+            <time class="post-meta-item" datetime="16-04-20"><i class="iconfont icon-date"></i>21 Apr 2016</time>
+        </div>
+    </div>
+    
+    <div class="filter"></div>
+    <div class="post-cover" style="background: url('') center no-repeat; background-size: cover;">
+    
+</header>
+
+<div class="post-content">
+    
+    <h2 class="post-subtitle"></h2>
+    
+    <article class="markdown-body">
+        <p><img src="/images/mcclient_forgelogo.png" alt="Forge镇楼&quot;" title="Forge镇楼" /></p>
+<h2 id="前言">前言</h2>
+<p>Minecraft深入我的生活几年了，但玩原版的时间只有最初的一个月，而大部分的精彩由Mod而来，所以，制作含有众多mod的整合包当然非常有必要了。</p>
+
+<h2 id="思路">思路</h2>
+<p>要想使用Mod，当然需要一个能够把Mod的内容添加到游戏的工具，它就是<strong>Forge</strong>。<br />
+在安装了<strong>Forge</strong>之后，使用<strong>Forge</strong>启动就可以加载Mod了。</p>
+
+<!--  more  -->
+
+<blockquote>
+  <p>client 客户端<br />
+latest 最新的<br />
+recommended 被推荐的</p>
+</blockquote>
+
+<h2 id="开始整合">开始整合</h2>
+<p>本文示范的版本为<strong>Minecraft 1.8.9</strong>，其他版本操作类似。</p>
+<h3 id="1文件准备">1.文件准备</h3>
+<p><a href="http://pan.baidu.com/s/1dD9aHjF">相关资料备用网盘下载地址</a><br />
+提取码：<code class="highlighter-rouge">kknc</code></p>
+
+<ol>
+  <li>Minecraft 1.8.9 纯净包</li>
+  <li>
+    <p>Forge安装包: <code class="highlighter-rouge">forge-1.8.9-11.15.1.1855-installer.jar</code> 
+ |__&gt; <a href="http://files.minecraftforge.net/">官方下载地址</a><br />
+<strong><em>从官方下载Forge请关闭广告过滤软件</em></strong></p>
+  </li>
+  <li>启动配置文件：<code class="highlighter-rouge">launcher_profiles.json</code></li>
+  <li>启动器：推荐 HMCL启动器 <code class="highlighter-rouge">HMCL-2.4.1.6.exe</code><br />
+ |__&gt; <a href="http://www.mcbbs.net/thread-142335-1-1.html">HMCL启动器 MCBBS发布帖</a></li>
+</ol>
+
+<h3 id="2新建文件夹">2.新建文件夹</h3>
+<p>新建一个文件夹用于存放客户端的所有文件，如 <code class="highlighter-rouge">1.8.9Client</code></p>
+
+<h3 id="3解压纯净包">3.解压纯净包</h3>
+<p>将纯净包解压到上一步新建的文件夹中，目录结构为:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>1.8.9Client
+ 	|__&gt;.minecraft
+ 	    |__&gt;assets
+ 	    |__&gt;libraries
+ 	    |__&gt;versions
+</code></pre>
+</div>
+
+<p><a name="step4"></a></p>
+<h3 id="4复制启动配置文件">4.复制启动配置文件</h3>
+<p>将启动配置文件 <code class="highlighter-rouge">launcher_profiles.json</code> 复制到 <code class="highlighter-rouge">.minecraft</code> 文件夹中。</p>
+
+<p><img src="/images/mcclient_copypro.png" alt="复制启动配置文件" title="复制启动配置文件" /></p>
+
+<h3 id="5安装forge">5.安装Forge</h3>
+<p>双击打开Forge安装文件 <code class="highlighter-rouge">forge-1.8.9-11.15.1.1855-installer.jar</code> ,选中 <code class="highlighter-rouge">Install client</code>，点击右下角选择客户端目录：<br />
+<img src="/images/mcclient_choosedir.png" alt="选择目录" title="选择目录" /><br />
+<em>如不能打开安装文件，请检查java是否安装正确</em></p>
+
+<p>选择 <code class="highlighter-rouge">.minecraft</code> 目录，点击 <code class="highlighter-rouge">打开</code><br />
+<img src="/images/mcclient_dir.png" alt="选择.minecraft" title="选择.minecraft" /><br />
+<strong>如果出现如下提示，请操作 <a href="#step4">步骤4:复制启动配置文件</a>：</strong> <br />
+<img src="/images/mcclient_err.png" alt="无启动配置文件" title="无启动配置文件" /><br />
+然后点击 <code class="highlighter-rouge">确定</code> 进行安装，以下状态为正在下载库文件:<br />
+<img src="/images/mcclient_downloading.png" alt="正在下载库文件" title="正在下载库文件" /></p>
+
+<p><em>下载时间由网络环境决定，如下载失败，考虑使用代理</em></p>
+
+<p>下载完成后如图：
+<img src="/images/mcclient_suc.png" alt="下载完成" title="下载完成" /></p>
+
+<h3 id="6复制启动器">6.复制启动器</h3>
+<p>将HMCL启动器复制到 <code class="highlighter-rouge">1.8.9Client</code> 文件夹中：<br />
+<img src="/images/mcclient_copylauncher.png" alt="复制启动器" title="复制启动器" /></p>
+
+<h3 id="7启动游戏">7.启动游戏</h3>
+<p>打开 <code class="highlighter-rouge">HMCL-2.4.1.6.exe</code> , 选择 <code class="highlighter-rouge">1.8.9-forge1.8.9-1185</code> , 输入ID后，点击右下角 <code class="highlighter-rouge">启动Minecraft</code> ：<br />
+<img src="/images/mcclient_chooseforge.jpg" alt="启动游戏" title="启动游戏" /><br />
+第一次启动时会下载游戏所需相关文件，下载时间视网络环境而定，如：
+<img src="/images/mcclient_downloading3.png" alt="下载中" title="下载中" /><br />
+下载后会启动游戏：<br />
+<img src="/images/mcclient_launching.png" alt="启动中" title="启动中" /><br />
+游戏启动完成后，将游戏设置为中文后退出游戏(也可不设置中文)，此时<strong>Forege</strong>已自动新建用于存放Mod的文件夹 <code class="highlighter-rouge">mods</code>。</p>
+
+<h3 id="8复制mod">8.复制Mod</h3>
+<p>将下载好的Mod文件复制到 <code class="highlighter-rouge">.minecraft</code> –&gt; <code class="highlighter-rouge">mods</code> 文件夹中，如：
+<img src="/images/mcclient_addmod.png" alt="复制Mod" title="复制Mod" /></p>
+<h3 id="9再次启动游戏">9.再次启动游戏</h3>
+<p>复制完mod后再次打开 <code class="highlighter-rouge">HMCL-2.4.1.6.exe</code> 并启动游戏，成功启动后完成，如 <code class="highlighter-rouge">神秘时代5</code> 已安装完毕！<br />
+<img src="/images/mcclient_done.jpg" alt="Done" title="Done" /></p>
+<h3 id="10完成">10.完成!</h3>
+
+<p>以上介绍了Minecraft整合的一般步骤，可能有的步骤随着版本的更新或启动器的不用有所出入，但整体思路不变。</p>
+
+<p>本文将不定期更正或更新，如有错误请海涵并留言告知。</p>
+
+<p>转载请注明出处。</p>
+
+
+    </article>
+    
+    <div class="social-share-wrapper">
+        <div class="social-share"></div>
+    </div>
+    
+</div>
+
+<section class="author-detail">
+    <section class="post-footer-item author-card">
+        <div class="avatar">
+            <img src="/assets/img/profile.png" alt="">
+        </div>
+        <div class="author-name" rel="author">LongerONE</div>
+        <div class="bio">
+            <p>iOS开发者</p>
+        </div>
+        
+        <ul class="sns-links">
+            
+            <li>
+                <a href="//weibo.com/208040425" target="_blank">
+                    <i class="iconfont icon-weibo"></i>
+                </a>
+            </li>
+            
+        </ul>
+        
+    </section>
+    <section class="post-footer-item read-next">
+        
+        <div class="read-next-item">
+            <a href="/ios%E5%BC%80%E5%8F%91%E6%89%8B%E6%9C%AD/2016/04/21/%E8%AE%B0%E4%B8%80%E6%B4%BCCornerStone%E5%B0%8F%E5%9D%91.html" class="read-next-link"></a>
+            <section>
+                <span>记一洼CornerStone小坑</span>
+                <p></p>
+            </section>
+            
+            <div class="filter"></div>
+            <img src="‘’" alt="">
+            
+        </div>
+        
+         
+        <div class="read-next-item">
+            <a href="/minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B%E7%B3%BB%E5%88%97/2016/04/17/Minecraft1.7%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B.html" class="read-next-link"></a>
+            <section>
+                <span>Minecraft1.7服务器搭建教程</span>
+                <p>前言</p>
+            </section>
+            
+            <div class="filter"></div>
+            <img src="" alt="">
+            
+        </div>
+        
+    </section>
+    
+    <section class="post-footer-item comment">
+        <div id="disqus_thread"></div>
+    </section>
+    
+</section>
+
+<footer class="g-footer">
+    <section>LongerONE的博客 © 2017</section>
+    <section>Powered by <a href="//jekyllrb.com">Jekyll</a> | <a href="https://github.com/kaeyleo/jekyll-theme-H2O">Theme H2O</a></section>
+</footer>
+
+<script src="/assets/js/social-share.min.js"></script>
+<script>
+    socialShare('.social-share', {
+        sites: ['wechat','weibo','douban','twitter'],
+        wechatQrcodeTitle: "分享到微信朋友圈",
+        wechatQrcodeHelper: '<p>扫码后点击右上角</p><p>将本文分享至朋友圈</p>'
+    });
+</script>
+<script>
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+/*写入自己的disqus信息*/
+s.src = 'https://liaokeyu.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+<script src="/assets/js/prism.js"></script>
+<script src="/assets/js/index.min.js"></script>
+</body>
+</html>

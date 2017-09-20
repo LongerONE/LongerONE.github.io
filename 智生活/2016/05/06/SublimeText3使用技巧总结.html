@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sublime Text 3 使用技巧总结 - LongerONE的博客</title>
+    <meta name="author"  content="LongerONE">
+    <meta name="description" content="Sublime Text 3 使用技巧总结">
+    <meta name="keywords"  content="Sublime">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Sublime Text 3 使用技巧总结 - LongerONE的博客">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://localhost:4000/%E6%99%BA%E7%94%9F%E6%B4%BB/2016/05/06/SublimeText3%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E6%80%BB%E7%BB%93.html">
+    <meta property="og:description" content="一名逗比的iOS开发者">
+    <meta property="og:site_name" content="LongerONE的博客">
+    <link rel="stylesheet" href="//cdn.staticfile.org/normalize/6.0.0/normalize.min.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_roc50gemkxpw4s4i.css">
+    <link rel="stylesheet" href="/assets/css/github-markdown.css">
+    <link rel="stylesheet" href="/assets/css/prism.css">
+    <link rel="stylesheet" href="/assets/css/share.min.css">
+    <link rel="stylesheet" href="/assets/css/app.min.css">
+</head>
+<body>
+    <!--[if lt IE 10]>
+<div class="alert-danger" role="alert">你的浏览器实在太太太旧了，放学别走，升级完浏览器再说！<a target="_blank" class="alert-link" href="http://browsehappy.com">立即升级</a></div>
+<![endif]-->
+<input id="nm-switch" type="hidden" value="true">
+
+<header class="g-header">
+    <div class="g-logo">
+        <a href="/"></a>
+    </div>
+    <i id="menu-toggle" class="iconfont icon-menu"></i>
+    <nav class="g-nav">
+        <ul>
+            
+            <li><a href="/">home</a></li>
+            
+            <li><a href="/tags.html">tags</a></li>
+            
+        </ul>
+    </nav>
+</header>
+
+<header class="g-banner post-header post-pattern-food bgcolor-default " data-theme="default">
+    <div class="post-wrapper">
+        <div class="post-tags">
+             
+            
+            <a href="/tags#Sublime" class="post-tag">Sublime</a>
+            
+            
+        </div>
+        <h1>Sublime Text 3 使用技巧总结</h1>
+        <div class="post-meta">
+            <span class="post-meta-item"><i class="iconfont icon-author"></i><a href="http://localhost:4000" target="_blank" rel="author">LongerONE</a></></span>
+            <time class="post-meta-item" datetime="16-05-06"><i class="iconfont icon-date"></i>07 May 2016</time>
+        </div>
+    </div>
+    
+    <div class="filter"></div>
+    <div class="post-cover" style="background: url('') center no-repeat; background-size: cover;">
+    
+</header>
+
+<div class="post-content">
+    
+    <h2 class="post-subtitle"></h2>
+    
+    <article class="markdown-body">
+        <p><img src="/images/sublime_logo.png" alt="Sublime Text 3" title="Sublime Text 3" /></p>
+
+<p>文本编辑作为常用的操作，当然需要一把利器。</p>
+
+<p>在接触 <strong>Sublime Text 3</strong> 之前，我用的是 <strong>Notepad++</strong> ，但在一次编辑Minecraft服务器插件 <code class="highlighter-rouge">BossShop</code> 配置时，因其换行的自动缩进导致配置文件无法被正常识别，而在软件的设置中，又难以找到相关设置以解决这个问题，于是找到了 <strong>Sublime Text 3</strong> ，编辑后配置文件可正常使用，遂路转粉。</p>
+
+<p>在这里就总结下使用的一些技巧。</p>
+
+<!-- more -->
+<h2 id="下载-sublime-text">下载 Sublime Text</h2>
+
+<p><a href="http://www.sublimetext.com/"><strong>Sublime Text官网</strong></a></p>
+
+<p><strong>其他：</strong></p>
+
+<ul>
+  <li><strong>Windows版</strong>： 推荐 <a href="http://haojian138.blog.163.com/">流风轻音</a></li>
+  <li><strong>MAC版</strong>：  <a href="http://pan.baidu.com/s/1kViywLL">Sublime Text 3107</a>  提取码：<code class="highlighter-rouge">7ql3 </code></li>
+</ul>
+
+<h2 id="使用技巧">使用技巧</h2>
+
+<p><a name="pkctrl"></a></p>
+<h3 id="1安装-package-control">1.安装 Package Control</h3>
+<p><strong>安装<code class="highlighter-rouge">Package Control</code></strong>: 使用 <strong>Ctrl + `</strong> (数字1左边的按键) 打开命令框，粘贴以下代码后回车：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())
+</code></pre>
+</div>
+
+<p>安装完成后出现如下提示：</p>
+
+<p><img src="/images/sublime_package.png" alt="Install Package Control" title="Install Package Control" /></p>
+
+<p><strong>重启 Sublime Text 3</strong> 后生效。</p>
+
+<h3 id="2解决中文乱码">2.解决中文乱码</h3>
+
+<p>从菜单中打开 <code class="highlighter-rouge">Tools</code> –&gt; <code class="highlighter-rouge">Command Palette</code>:</p>
+
+<p><img src="/images/sublime_command.png" alt="Command Palette" title="Command Palette" /></p>
+
+<p>打开 <strong>Install Package</strong>:<br />
+<strong><em>未安装 <code class="highlighter-rouge">Package Control</code> 参考：<a href="#pkctrl">1.安装 Package Control</a></em></strong></p>
+
+<p><img src="/images/sublime_installp.png" alt="Install Package" title="Install Package" /></p>
+
+<p>稍等片刻后，出现 <strong>Install Package</strong>的窗口，查找 <code class="highlighter-rouge">ConvertToUTF8</code>:</p>
+
+<p><img src="/images/sublime_conutf8.png" alt="ConvertToUTF8" title="ConvertToUTF8" /></p>
+
+<p>选择 <code class="highlighter-rouge">ConvertToUTF8</code> 进行安装，安装完成后提示如下：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Package Control Messages
+========================  
+
+ConvertToUTF8  
+-------------  
+
+  ConvertToUTF8  
+  ==================
+  With this plugin, you can edit and save the files which encodings are not supported by Sublime Text currently, especially for those used by CJK users, such as GB2312, GBK, BIG5, EUC-KR, EUC-JP, etc.
+  
+  Configuration
+---- 
+  Please check ConvertToUTF8.sublime-settings file for details. You should save your personal settings in a file named "ConvertToUTF8.sublime-settings" under "User" folder.
+  
+  * encoding\_list: encoding selection list when detection is failed
+  * max\_cache\_size: maximum encoding cache size, 0 means no cache (default: 100)
+  * max\_detect\_lines: maximum detection lines, 0 means unlimited (default: 600)
+  * preview\_action: converting the file's content to UTF-8 when previewing it (default: false)
+  * default\_encoding\_on\_create: specific the default encoding for newly created file (such as "GBK"), empty value means using sublime text's "default\_encoding" setting (default: '')
+  * convert\_on\_load: convert the file's content to UTF-8 when it is loaded (default: true)
+  * convert\_on\_save: convert the file's content from UTF-8 to its original (or specific) encoding when it is saved (default: true)
+  * convert\_on\_find: convert the text in Find Results view to UTF-8 (default: false)
+  * lazy\_reload: save file to a temporary location, and reload it in background when switching to other windows or tabs (default: false)
+	  
+  Contact me
+---- 
+  Please send me your questions or suggestions: sunlxy (at) yahoo.com or http://weibo.com/seanliang
+  
+  For more information, please visit: https://github.com/seanliang/ConvertToUTF8
+</code></pre>
+</div>
+
+<p><strong>重启 Sublime Text 3</strong> 后生效。</p>
+
+<h3 id="3使用中文菜单">3.使用中文菜单</h3>
+<p>从菜单中打开 <code class="highlighter-rouge">Tools</code> –&gt; <code class="highlighter-rouge">Command Palette</code>:</p>
+
+<p><img src="/images/sublime_command.png" alt="Command Palette" title="Command Palette" /></p>
+
+<p>打开 <strong>Install Package</strong>:<br />
+<strong><em>未安装Package Control参考：<a href="#pkctrl">1.安装 Package Control</a></em></strong></p>
+
+<p><img src="/images/sublime_installp.png" alt="Install Package" title="Install Package" /></p>
+
+<p>稍等片刻后，出现 <strong>Install Package</strong>的窗口，查找 <code class="highlighter-rouge">ChineseLocalization</code>:</p>
+
+<p><img src="/images/sublime_cn.png" alt="安装中文菜单" title="安装中文菜单" /></p>
+
+<p>选择 <code class="highlighter-rouge">ChineseLocalization</code> 进行安装。</p>
+
+<p>安装完成后，如菜单仍为英文，则 <strong>重启 Sublime Text 3</strong> :</p>
+
+<p><img src="/images/sublime_cnmenu.png" alt="中文菜单" title="中文菜单" /></p>
+
+<h3 id="4关闭更新提示">4.关闭更新提示</h3>
+<p><img src="/images/sublime_update.png" alt="更新提示" title="更新提示" /></p>
+
+<ul>
+  <li><strong>英文菜单:</strong><br />
+打开 <code class="highlighter-rouge">Sublime Text</code> —&gt; <code class="highlighter-rouge">Preferences</code> —&gt; <code class="highlighter-rouge">Settings - User</code> ;</li>
+  <li><strong>中文菜单:</strong><br />
+打开 <code class="highlighter-rouge">首选项</code> —&gt; <code class="highlighter-rouge">设置 - 用户</code>;<br />
+输入以下代码后保存，重启 <strong>重启 Sublime Text 3</strong> 生效：</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w"> </span><span class="nt">"update_check"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+
+
+    </article>
+    
+    <div class="social-share-wrapper">
+        <div class="social-share"></div>
+    </div>
+    
+</div>
+
+<section class="author-detail">
+    <section class="post-footer-item author-card">
+        <div class="avatar">
+            <img src="/assets/img/profile.png" alt="">
+        </div>
+        <div class="author-name" rel="author">LongerONE</div>
+        <div class="bio">
+            <p>iOS开发者</p>
+        </div>
+        
+        <ul class="sns-links">
+            
+            <li>
+                <a href="//weibo.com/208040425" target="_blank">
+                    <i class="iconfont icon-weibo"></i>
+                </a>
+            </li>
+            
+        </ul>
+        
+    </section>
+    <section class="post-footer-item read-next">
+        
+        <div class="read-next-item">
+            <a href="/ios%E5%BC%80%E5%8F%91%E6%89%8B%E6%9C%AD/2016/05/08/iOS%E9%94%AE%E7%9B%98%E5%A4%84%E7%90%86.html" class="read-next-link"></a>
+            <section>
+                <span>iOS键盘处理</span>
+                <p></p>
+            </section>
+            
+            <div class="filter"></div>
+            <img src="" alt="">
+            
+        </div>
+        
+         
+        <div class="read-next-item">
+            <a href="/minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B%E7%B3%BB%E5%88%97/2016/04/23/Minecraft%E5%86%85%E7%BD%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E4%BB%8B%E7%BB%8D.html" class="read-next-link"></a>
+            <section>
+                <span>Minecraft内网服务器解决方案介绍</span>
+                <p>在Minecraft服务器搭建好以后，下一步就让其他玩家进入服务器，但因网络环境的差异，导致有的服务器让其他外网的...</p>
+            </section>
+            
+            <div class="filter"></div>
+            <img src="" alt="">
+            
+        </div>
+        
+    </section>
+    
+    <section class="post-footer-item comment">
+        <div id="disqus_thread"></div>
+    </section>
+    
+</section>
+
+<footer class="g-footer">
+    <section>LongerONE的博客 © 2017</section>
+    <section>Powered by <a href="//jekyllrb.com">Jekyll</a> | <a href="https://github.com/kaeyleo/jekyll-theme-H2O">Theme H2O</a></section>
+</footer>
+
+<script src="/assets/js/social-share.min.js"></script>
+<script>
+    socialShare('.social-share', {
+        sites: ['wechat','weibo','douban','twitter'],
+        wechatQrcodeTitle: "分享到微信朋友圈",
+        wechatQrcodeHelper: '<p>扫码后点击右上角</p><p>将本文分享至朋友圈</p>'
+    });
+</script>
+<script>
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+/*写入自己的disqus信息*/
+s.src = 'https://liaokeyu.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+<script src="/assets/js/prism.js"></script>
+<script src="/assets/js/index.min.js"></script>
+</body>
+</html>

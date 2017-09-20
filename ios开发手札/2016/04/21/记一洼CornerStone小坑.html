@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>记一洼CornerStone小坑 - LongerONE的博客</title>
+    <meta name="author"  content="LongerONE">
+    <meta name="description" content="记一洼CornerStone小坑">
+    <meta name="keywords"  content="iOS开发, CornerStone, SVN">
+    <!-- Open Graph -->
+    <meta property="og:title" content="记一洼CornerStone小坑 - LongerONE的博客">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://localhost:4000/ios%E5%BC%80%E5%8F%91%E6%89%8B%E6%9C%AD/2016/04/21/%E8%AE%B0%E4%B8%80%E6%B4%BCCornerStone%E5%B0%8F%E5%9D%91.html">
+    <meta property="og:description" content="一名逗比的iOS开发者">
+    <meta property="og:site_name" content="LongerONE的博客">
+    <link rel="stylesheet" href="//cdn.staticfile.org/normalize/6.0.0/normalize.min.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_roc50gemkxpw4s4i.css">
+    <link rel="stylesheet" href="/assets/css/github-markdown.css">
+    <link rel="stylesheet" href="/assets/css/prism.css">
+    <link rel="stylesheet" href="/assets/css/share.min.css">
+    <link rel="stylesheet" href="/assets/css/app.min.css">
+</head>
+<body>
+    <!--[if lt IE 10]>
+<div class="alert-danger" role="alert">你的浏览器实在太太太旧了，放学别走，升级完浏览器再说！<a target="_blank" class="alert-link" href="http://browsehappy.com">立即升级</a></div>
+<![endif]-->
+<input id="nm-switch" type="hidden" value="true">
+
+<header class="g-header">
+    <div class="g-logo">
+        <a href="/"></a>
+    </div>
+    <i id="menu-toggle" class="iconfont icon-menu"></i>
+    <nav class="g-nav">
+        <ul>
+            
+            <li><a href="/">home</a></li>
+            
+            <li><a href="/tags.html">tags</a></li>
+            
+        </ul>
+    </nav>
+</header>
+
+<header class="g-banner post-header post-pattern-food bgcolor-default " data-theme="default">
+    <div class="post-wrapper">
+        <div class="post-tags">
+             
+            
+            <a href="/tags#iOS开发" class="post-tag">iOS开发</a>
+            
+            <a href="/tags#CornerStone" class="post-tag">CornerStone</a>
+            
+            <a href="/tags#SVN" class="post-tag">SVN</a>
+            
+            
+        </div>
+        <h1>记一洼CornerStone小坑</h1>
+        <div class="post-meta">
+            <span class="post-meta-item"><i class="iconfont icon-author"></i><a href="http://localhost:4000" target="_blank" rel="author">LongerONE</a></></span>
+            <time class="post-meta-item" datetime="16-04-21"><i class="iconfont icon-date"></i>22 Apr 2016</time>
+        </div>
+    </div>
+    
+    <div class="filter"></div>
+    <div class="post-cover" style="background: url('‘’') center no-repeat; background-size: cover;">
+    
+</header>
+
+<div class="post-content">
+    
+    <h2 class="post-subtitle">CornerStone蛋疼问题</h2>
+    
+    <article class="markdown-body">
+        <p><img src="/images/cornerstone_logo.jpg" alt="" /></p>
+
+<h2 id="小坑环境">小坑环境</h2>
+<p>OS X: <code class="highlighter-rouge">10.11.4</code><br />
+CornerStone: <code class="highlighter-rouge">v2.7.18</code><br />
+SVN 版本：<code class="highlighter-rouge">v1.6 </code></p>
+
+<h2 id="小坑描述">小坑描述</h2>
+
+<p>最近使用<strong>CornerStone</strong>提交项目出现小坑，添加文件夹时出现错误提示：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Description: ... containing working copy admin area is missing
+Status:155005
+File:subversion/libsvn_wc/lock.c,947
+</code></pre>
+</div>
+
+<!-- more -->
+
+<p>如图：<br />
+<img src="/images/cornerstone_missing.png" alt="Missing" title="Missing" /></p>
+
+<p>尝试对文件夹进行 <code class="highlighter-rouge">unlock</code>，结果提示：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>'xxx' has no URL
+The operation could not be completed
+  
+Descriptin:'xxx' has no URL
+Status:150004
+File:subversion/libsvn_client/locking_commands.c,266
+</code></pre>
+</div>
+
+<p>如图：<br />
+<img src="/images/cornerstone_nourl.png" alt="no URL" title="no URL" /></p>
+
+<p><strong>CornerStone</strong>中出错文件夹出现如下状态：<br />
+<img src="/images/cornerstone_error.png" alt="Error" title="Error" /></p>
+
+<p>此时大脑的草原上出现千万只逗逼动物奔腾而过…</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  ======   ====== 
+  	  ||       ||
+  	  ||       ||
+  	  ~~~~~~~~~~~
+</code></pre>
+</div>
+
+<h2 id="一种填坑方法">一种填坑方法</h2>
+<p>第一次遇到这个问题时，是提交整个下午的代码，晚上8点提交报错，当时就懵得晕乎，几经折腾，终于找到一种结局方法：</p>
+
+<p>进入<strong>Finder</strong>复制出错的文件夹到别处，<strong>CornerStone</strong>中出现如下提示：<br />
+<img src="/images/cornerstone_notexist.png" alt="Not Exist" title="Not Exist" /></p>
+
+<p>然后点击右键，选择 <code class="highlighter-rouge">delete</code> :<br />
+<img src="/images/cornerstone_delete.jpg" alt="Delete" title="Delete" /></p>
+
+<p>再将文件夹复制到原来的地方，可直接在<strong>Finder</strong>使用 <code class="highlighter-rouge">command</code> + <code class="highlighter-rouge">Z</code>，随后<strong>CornerStone</strong>出现如下提示：<br />
+<img src="/images/cornerstone_notadd.png" alt="Not Add" title="Not Add" /></p>
+
+<p>接着正常<code class="highlighter-rouge">Add</code>并提交项目即可。</p>
+
+<p>风吹草低现牛羊啊 ~ ~ ~CornerStone</p>
+
+    </article>
+    
+    <div class="social-share-wrapper">
+        <div class="social-share"></div>
+    </div>
+    
+</div>
+
+<section class="author-detail">
+    <section class="post-footer-item author-card">
+        <div class="avatar">
+            <img src="/assets/img/profile.png" alt="">
+        </div>
+        <div class="author-name" rel="author">LongerONE</div>
+        <div class="bio">
+            <p>iOS开发者</p>
+        </div>
+        
+        <ul class="sns-links">
+            
+            <li>
+                <a href="//weibo.com/208040425" target="_blank">
+                    <i class="iconfont icon-weibo"></i>
+                </a>
+            </li>
+            
+        </ul>
+        
+    </section>
+    <section class="post-footer-item read-next">
+        
+        <div class="read-next-item">
+            <a href="/minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B%E7%B3%BB%E5%88%97/2016/04/22/Minecraft1.8%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B.html" class="read-next-link"></a>
+            <section>
+                <span>Minecraft1.8服务器搭建教程</span>
+                <p></p>
+            </section>
+            
+            <div class="filter"></div>
+            <img src="" alt="">
+            
+        </div>
+        
+         
+        <div class="read-next-item">
+            <a href="/minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B%E7%B3%BB%E5%88%97/2016/04/20/Minecraft%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%95%B4%E5%90%88%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B.html" class="read-next-link"></a>
+            <section>
+                <span>Minecraft客户端整合基础教程</span>
+                <p>前言Minecraft深入我的生活几年了，但玩原版的时间只有最初的一个月，而大部分的精彩由Mod而来，所以，制作含...</p>
+            </section>
+            
+            <div class="filter"></div>
+            <img src="" alt="">
+            
+        </div>
+        
+    </section>
+    
+    <section class="post-footer-item comment">
+        <div id="disqus_thread"></div>
+    </section>
+    
+</section>
+
+<footer class="g-footer">
+    <section>LongerONE的博客 © 2017</section>
+    <section>Powered by <a href="//jekyllrb.com">Jekyll</a> | <a href="https://github.com/kaeyleo/jekyll-theme-H2O">Theme H2O</a></section>
+</footer>
+
+<script src="/assets/js/social-share.min.js"></script>
+<script>
+    socialShare('.social-share', {
+        sites: ['wechat','weibo','douban','twitter'],
+        wechatQrcodeTitle: "分享到微信朋友圈",
+        wechatQrcodeHelper: '<p>扫码后点击右上角</p><p>将本文分享至朋友圈</p>'
+    });
+</script>
+<script>
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+/*写入自己的disqus信息*/
+s.src = 'https://liaokeyu.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+<script src="/assets/js/prism.js"></script>
+<script src="/assets/js/index.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TableViewCell的自定义按钮定位 - LongerONE的博客</title>
+    <meta name="author"  content="LongerONE">
+    <meta name="description" content="TableViewCell的自定义按钮定位">
+    <meta name="keywords"  content="iOS, TableViewCell">
+    <!-- Open Graph -->
+    <meta property="og:title" content="TableViewCell的自定义按钮定位 - LongerONE的博客">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://localhost:4000/ios%E5%BC%80%E5%8F%91%E6%89%8B%E6%9C%AD/2016/07/13/TableViewCell%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%89%E9%92%AE%E5%AE%9A%E4%BD%8D.html">
+    <meta property="og:description" content="一名逗比的iOS开发者">
+    <meta property="og:site_name" content="LongerONE的博客">
+    <link rel="stylesheet" href="//cdn.staticfile.org/normalize/6.0.0/normalize.min.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_roc50gemkxpw4s4i.css">
+    <link rel="stylesheet" href="/assets/css/github-markdown.css">
+    <link rel="stylesheet" href="/assets/css/prism.css">
+    <link rel="stylesheet" href="/assets/css/share.min.css">
+    <link rel="stylesheet" href="/assets/css/app.min.css">
+</head>
+<body>
+    <!--[if lt IE 10]>
+<div class="alert-danger" role="alert">你的浏览器实在太太太旧了，放学别走，升级完浏览器再说！<a target="_blank" class="alert-link" href="http://browsehappy.com">立即升级</a></div>
+<![endif]-->
+<input id="nm-switch" type="hidden" value="true">
+
+<header class="g-header">
+    <div class="g-logo">
+        <a href="/"></a>
+    </div>
+    <i id="menu-toggle" class="iconfont icon-menu"></i>
+    <nav class="g-nav">
+        <ul>
+            
+            <li><a href="/">home</a></li>
+            
+            <li><a href="/tags.html">tags</a></li>
+            
+        </ul>
+    </nav>
+</header>
+
+<header class="g-banner post-header post-pattern-food bgcolor-default " data-theme="default">
+    <div class="post-wrapper">
+        <div class="post-tags">
+             
+            
+            <a href="/tags#iOS" class="post-tag">iOS</a>
+            
+            <a href="/tags#TableViewCell" class="post-tag">TableViewCell</a>
+            
+            
+        </div>
+        <h1>TableViewCell的自定义按钮定位</h1>
+        <div class="post-meta">
+            <span class="post-meta-item"><i class="iconfont icon-author"></i><a href="http://localhost:4000" target="_blank" rel="author">LongerONE</a></></span>
+            <time class="post-meta-item" datetime="16-07-13"><i class="iconfont icon-date"></i>13 Jul 2016</time>
+        </div>
+    </div>
+    
+    <div class="filter"></div>
+    <div class="post-cover" style="background: url('') center no-repeat; background-size: cover;">
+    
+</header>
+
+<div class="post-content">
+    
+    <h2 class="post-subtitle"></h2>
+    
+    <article class="markdown-body">
+        <p>在iOS开发中，<code class="highlighter-rouge">TableView</code>中的点击事件通常是以<code class="highlighter-rouge">indexPath.row</code>来处理，但是，如果<code class="highlighter-rouge">TableViewCell</code>中有多个自定义操作，如何确定点击了哪一行的哪一个按钮。</p>
+
+<p><!-- more --></p>
+
+<p>一种方案：</p>
+
+<ul>
+  <li>先为按钮添加点击方法：
+    <pre><code class="language-objectivec"> [cellC.btn addTarget:self action:@selector(clickCellButton:withEvent:) forControlEvents:UIControlEventTouchUpInside];
+</code></pre>
+  </li>
+  <li>再通过touch事件定位到具体的位置：</li>
+</ul>
+
+<pre><code class="language-objectivec">  - (void)clickCellButton:(UIButton *)sender withEvent:(id)event {
+    //获取点击所在的 IndexPath
+    NSSet *touches = [event allTouches];
+    UITouch *touch = [touches anyObject];
+    //获取在列表的点击坐标
+    CGPoint touchPoint = [touch locationInView:self.myTableView];
+    NSIndexPath *indexPath = [self.myTableView indexPathForRowAtPoint:touchPoint];
+    
+    if (indexPath != nil) {
+        //可通过tag再进行具体判断
+        
+  	 }
+  } 
+</code></pre>
+
+
+    </article>
+    
+    <div class="social-share-wrapper">
+        <div class="social-share"></div>
+    </div>
+    
+</div>
+
+<section class="author-detail">
+    <section class="post-footer-item author-card">
+        <div class="avatar">
+            <img src="/assets/img/profile.png" alt="">
+        </div>
+        <div class="author-name" rel="author">LongerONE</div>
+        <div class="bio">
+            <p>iOS开发者</p>
+        </div>
+        
+        <ul class="sns-links">
+            
+            <li>
+                <a href="//weibo.com/208040425" target="_blank">
+                    <i class="iconfont icon-weibo"></i>
+                </a>
+            </li>
+            
+        </ul>
+        
+    </section>
+    <section class="post-footer-item read-next">
+        
+        <div class="read-next-item">
+            <a href="/ui%E8%AE%BE%E8%AE%A1/2016/07/23/UI%E7%BB%83%E4%B9%A0%E5%A4%A9%E6%B0%94%E5%9B%BE%E6%A0%87.html" class="read-next-link"></a>
+            <section>
+                <span>UI练习：天气图标</span>
+                <p>临摹一枚天气图标，但对于阴影的羽化处理一直没做出来。不过，对于蒙版的使用又熟悉了一点。</p>
+            </section>
+            
+            <div class="filter"></div>
+            <img src="" alt="">
+            
+        </div>
+        
+         
+        <div class="read-next-item">
+            <a href="/ios%E5%BC%80%E5%8F%91%E6%89%8B%E6%9C%AD/2016/06/14/%E6%B7%BB%E5%8A%A0%E9%9D%99%E6%80%81%E5%BA%93%E9%94%99%E8%AF%AFnotfound.html" class="read-next-link"></a>
+            <section>
+                <span>Xcode添加静态库错误：library not found for</span>
+                <p>又是一次版本迭代，但在加入静态库时出现了蛋疼了问题，折腾了许久。</p>
+            </section>
+            
+            <div class="filter"></div>
+            <img src="" alt="">
+            
+        </div>
+        
+    </section>
+    
+    <section class="post-footer-item comment">
+        <div id="disqus_thread"></div>
+    </section>
+    
+</section>
+
+<footer class="g-footer">
+    <section>LongerONE的博客 © 2017</section>
+    <section>Powered by <a href="//jekyllrb.com">Jekyll</a> | <a href="https://github.com/kaeyleo/jekyll-theme-H2O">Theme H2O</a></section>
+</footer>
+
+<script src="/assets/js/social-share.min.js"></script>
+<script>
+    socialShare('.social-share', {
+        sites: ['wechat','weibo','douban','twitter'],
+        wechatQrcodeTitle: "分享到微信朋友圈",
+        wechatQrcodeHelper: '<p>扫码后点击右上角</p><p>将本文分享至朋友圈</p>'
+    });
+</script>
+<script>
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+/*写入自己的disqus信息*/
+s.src = 'https://liaokeyu.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+<script src="/assets/js/prism.js"></script>
+<script src="/assets/js/index.min.js"></script>
+</body>
+</html>

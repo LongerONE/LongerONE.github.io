@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CentOS 7 使用McMyAdmin搭建Minecraft服务器 - LongerONE的博客</title>
+    <meta name="author"  content="LongerONE">
+    <meta name="description" content="CentOS 7 使用McMyAdmin搭建Minecraft服务器">
+    <meta name="keywords"  content="CentOS, McMyAdmin, Minecraft">
+    <!-- Open Graph -->
+    <meta property="og:title" content="CentOS 7 使用McMyAdmin搭建Minecraft服务器 - LongerONE的博客">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://localhost:4000/minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B%E7%B3%BB%E5%88%97/2016/10/12/CentOS7MMA.html">
+    <meta property="og:description" content="一名逗比的iOS开发者">
+    <meta property="og:site_name" content="LongerONE的博客">
+    <link rel="stylesheet" href="//cdn.staticfile.org/normalize/6.0.0/normalize.min.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_roc50gemkxpw4s4i.css">
+    <link rel="stylesheet" href="/assets/css/github-markdown.css">
+    <link rel="stylesheet" href="/assets/css/prism.css">
+    <link rel="stylesheet" href="/assets/css/share.min.css">
+    <link rel="stylesheet" href="/assets/css/app.min.css">
+</head>
+<body>
+    <!--[if lt IE 10]>
+<div class="alert-danger" role="alert">你的浏览器实在太太太旧了，放学别走，升级完浏览器再说！<a target="_blank" class="alert-link" href="http://browsehappy.com">立即升级</a></div>
+<![endif]-->
+<input id="nm-switch" type="hidden" value="true">
+
+<header class="g-header">
+    <div class="g-logo">
+        <a href="/"></a>
+    </div>
+    <i id="menu-toggle" class="iconfont icon-menu"></i>
+    <nav class="g-nav">
+        <ul>
+            
+            <li><a href="/">home</a></li>
+            
+            <li><a href="/tags.html">tags</a></li>
+            
+        </ul>
+    </nav>
+</header>
+
+<header class="g-banner post-header post-pattern-food bgcolor-default " data-theme="default">
+    <div class="post-wrapper">
+        <div class="post-tags">
+             
+            
+            <a href="/tags#CentOS" class="post-tag">CentOS</a>
+            
+            <a href="/tags#McMyAdmin" class="post-tag">McMyAdmin</a>
+            
+            <a href="/tags#Minecraft" class="post-tag">Minecraft</a>
+            
+            
+        </div>
+        <h1>CentOS 7 使用McMyAdmin搭建Minecraft服务器</h1>
+        <div class="post-meta">
+            <span class="post-meta-item"><i class="iconfont icon-author"></i><a href="http://localhost:4000" target="_blank" rel="author">LongerONE</a></></span>
+            <time class="post-meta-item" datetime="16-10-12"><i class="iconfont icon-date"></i>12 Oct 2016</time>
+        </div>
+    </div>
+    
+    <div class="filter"></div>
+    <div class="post-cover" style="background: url('') center no-repeat; background-size: cover;">
+    
+</header>
+
+<div class="post-content">
+    
+    <h2 class="post-subtitle"></h2>
+    
+    <article class="markdown-body">
+        <h3 id="前言">前言</h3>
+<p>McMyAdmin是一款Minecraft服务器管理面板，功能强大，界面友好，基于 <code class="highlighter-rouge">.NET</code> 开发,适用于单个服务器管理。</p>
+
+<p>本文简单介绍如何在<strong>CentOS7</strong>环境下使用McMyAdmin搭建Minecraft服务器。</p>
+
+<!-- more -->
+
+<h3 id="步骤">步骤</h3>
+
+<h4 id="安装java">安装java</h4>
+<ul>
+  <li>
+    <p>首先使用以下命令安装java，如已安装则跳过：</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code> yum install java
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>出现如下提示则输入<code class="highlighter-rouge">y</code>后<code class="highlighter-rouge">回车</code>：</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code> 事务概要
+ ====================================================================================
+ 安装  1 软件包 (+14 依赖软件包)
+	 
+ 总下载量：34 M
+ 安装大小：108 M
+ Is this ok [y/d/N]:
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>安装完成后验证是否安装成功：</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code> java -version
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>将会显示java的版本信息：</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code> openjdk version "1.8.0_102"
+ OpenJDK Runtime Environment (build 1.8.0_102-b14)
+ OpenJDK 64-Bit Server VM (build 25.102-b14, mixed mode)
+</code></pre>
+    </div>
+  </li>
+</ul>
+
+<h4 id="安装mono">安装mono</h4>
+
+<p>mono可以让<code class="highlighter-rouge">.NET</code>程序在Liunx环境下运行，因mono包没有包含在CentOS的仓库里，我们需要把Mono的仓库导入到包仓库里.</p>
+
+<ul>
+  <li>
+    <p>在root 用户权限下执行下面命令：</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>rpm --import "http://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF"
+yum-config-manager --add-repo http://download.mono-project.com/repo/centos/
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>如提示<code class="highlighter-rouge">-bash: yum-config-manager: 未找到命令</code>,是因为<code class="highlighter-rouge">yum-config-manager</code>在yum-utils 包里，所以先安装：</p>
+  </li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  yum -y install yum-utils
+</code></pre>
+</div>
+<ul>
+  <li>安装mono</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  yum install mono
+</code></pre>
+</div>
+
+<ul>
+  <li>验证：</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  mono
+</code></pre>
+</div>
+
+<ul>
+  <li>将会显示mono的提示信息：</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>`Usage is: mono [options] program [program-options]
+Development:
+	--aot[=&lt;options&gt;]      Compiles the assembly to native code
+	--debug[=&lt;options&gt;]    Enable debugging support, use --help-debug for details
+	--debugger-agent=options Enable the debugger agent
+	--profile[=profiler]   Runs in profiling mode with the specified profiler module
+	--trace[=EXPR]         Enable tracing, use --help-trace for details
+	--jitmap               Output a jit method map to /tmp/perf-PID.map
+	--help-devel           Shows more options available to developers
+Runtime:
+	--config FILE          Loads FILE as the Mono config
+	--verbose, -v          Increases the verbosity level
+	--help, -h             Show usage information
+	--version, -V          Show version information
+	--runtime=VERSION      Use the VERSION runtime, instead of autodetecting
+	--optimize=OPT         Turns on or off a specific optimization
+	                       Use --list-opt to get a list of optimizations
+	--security[=mode]      Turns on the unsupported security manager (off by default)
+	                       mode is one of cas, core-clr, verifiable or validil
+	--attach=OPTIONS       Pass OPTIONS to the attach agent in the runtime.
+	                       Currently the only supported option is 'disable'.
+	--llvm, --nollvm       Controls whenever the runtime uses LLVM to compile code.
+	--gc=[sgen,boehm]      Select SGen or Boehm GC (runs mono or mono-sgen)
+</code></pre>
+</div>
+<p>`<br />
+  #### 运行McMyAdmin</p>
+
+<ul>
+  <li>从官方下载或上传McMyAdmin，推荐搭建FTP服务器并上传，同时方便后期管理文件。</li>
+  <li>解压压缩包，如未压缩则跳过此步骤，例如：</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  unzip MMA.zip
+</code></pre>
+</div>
+
+<ul>
+  <li>设置管理密码:</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  mono McMyAdmin.exe -setpass [YOURPASSWORD] -configonly
+</code></pre>
+</div>
+
+<ul>
+  <li>
+    <p>其中<code class="highlighter-rouge">[YOURPASSWORD]</code>就是要设置的密码。此步骤会检测java是否成功安装，如失败，则尝试查看配置文件是否异常或重新安装java。</p>
+  </li>
+  <li>
+    <p>运行McMyAdmin</p>
+  </li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  mono McMyAdmin.exe
+</code></pre>
+</div>
+
+<ul>
+  <li>将会出现如下提示：</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Notice  : This is the first time McMyAdmin has been started.
+Notice  : You must complete the first-start wizard via the web interface.
+</code></pre>
+</div>
+
+<ul>
+  <li>进入web管理<br />
+  打开浏览器输入VPS地址，默认端口<code class="highlighter-rouge">8080</code>,如：<code class="highlighter-rouge">http://192.168.52.128:8080</code>，然后登陆。</li>
+</ul>
+
+<p><strong>提示：Minecraft服务端的安装可以使用McMyAdmin下载或自行整合好服务端以后上传至<code class="highlighter-rouge">Minecraft</code>目录。</strong></p>
+
+<h4 id="后台运行">后台运行</h4>
+
+<ul>
+  <li>
+    <p>推荐使用其他用户来运行MMA，推荐使用FTP相同的账户<code class="highlighter-rouge">ftpuser</code>（需要打开shell权限）</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>su ftpuser -l -c "mono McMyAdmin.exe"
+</code></pre>
+    </div>
+  </li>
+</ul>
+
+<h4 id="进程管理">进程管理</h4>
+
+<ul>
+  <li>使用如下指令查看进程状态:</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  ps aux | grep mono
+</code></pre>
+</div>
+
+<ul>
+  <li>将会显示McMyAdmin的进程信息,<code class="highlighter-rouge">10071</code>为进程ID：</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  root      10071 66.6  6.2 1326964 63068 ?       Sl   10:11   0:22 mono McMyAdmin.exe
+</code></pre>
+</div>
+
+<ul>
+  <li>使用如下指令关闭进程（<strong>先正常关闭服务器以防止数据丢失</strong>）:</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  kill 10071
+</code></pre>
+</div>
+
+<h4 id="添加快速启动脚本">添加快速启动脚本</h4>
+
+<ul>
+  <li>新建一个sh脚本：</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  vi start.sh
+</code></pre>
+</div>
+
+<ul>
+  <li>然后按<code class="highlighter-rouge">i</code>进入编辑插入模式，左下角会提示<code class="highlighter-rouge">INSERT</code>,随后将启动指令输入：</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  su ftpuser -l -c "mono McMyAdmin.exe"
+</code></pre>
+</div>
+
+<ul>
+  <li>
+    <p>输入完成后，按<code class="highlighter-rouge">Esc</code>键退出编辑插入模式，输入<strong><code class="highlighter-rouge">:wq</code></strong>保存并退出。</p>
+  </li>
+  <li>
+    <p>此时目录下多了一个<code class="highlighter-rouge">start.sh</code>文件，为该文件添加可以执行权限：</p>
+  </li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  chmod +x start.sh
+</code></pre>
+</div>
+
+<ul>
+  <li>然后输入以下指令启动McMyAdmin并在后台运行:</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  ./start.sh
+</code></pre>
+</div>
+
+<p><strong>教程完毕</strong></p>
+
+
+    </article>
+    
+    <div class="social-share-wrapper">
+        <div class="social-share"></div>
+    </div>
+    
+</div>
+
+<section class="author-detail">
+    <section class="post-footer-item author-card">
+        <div class="avatar">
+            <img src="/assets/img/profile.png" alt="">
+        </div>
+        <div class="author-name" rel="author">LongerONE</div>
+        <div class="bio">
+            <p>iOS开发者</p>
+        </div>
+        
+        <ul class="sns-links">
+            
+            <li>
+                <a href="//weibo.com/208040425" target="_blank">
+                    <i class="iconfont icon-weibo"></i>
+                </a>
+            </li>
+            
+        </ul>
+        
+    </section>
+    <section class="post-footer-item read-next">
+        
+        <div class="read-next-item">
+            <a href="/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/2017/02/18/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E9%AB%98%E9%80%9F%E4%B8%8B%E8%BD%BD%E6%96%B9%E6%A1%88.html" class="read-next-link"></a>
+            <section>
+                <span>百度网盘高速下载方案</span>
+                <p>注：在经历各种封锁后，众多下载方式纷纷阵亡！目前仅使用外链效果较好</p>
+            </section>
+            
+            <div class="filter"></div>
+            <img src="/images/baidunetdisk.png" alt="">
+            
+        </div>
+        
+         
+        <div class="read-next-item">
+            <a href="/linux/2016/09/18/vsftpd%E9%94%99%E8%AF%AF553.html" class="read-next-link"></a>
+            <section>
+                <span>FTP服务器：vsftpd 上传错误 553</span>
+                <p>一、问题服务器环境： CentOS7.2 x64</p>
+            </section>
+            
+            <div class="filter"></div>
+            <img src="" alt="">
+            
+        </div>
+        
+    </section>
+    
+    <section class="post-footer-item comment">
+        <div id="disqus_thread"></div>
+    </section>
+    
+</section>
+
+<footer class="g-footer">
+    <section>LongerONE的博客 © 2017</section>
+    <section>Powered by <a href="//jekyllrb.com">Jekyll</a> | <a href="https://github.com/kaeyleo/jekyll-theme-H2O">Theme H2O</a></section>
+</footer>
+
+<script src="/assets/js/social-share.min.js"></script>
+<script>
+    socialShare('.social-share', {
+        sites: ['wechat','weibo','douban','twitter'],
+        wechatQrcodeTitle: "分享到微信朋友圈",
+        wechatQrcodeHelper: '<p>扫码后点击右上角</p><p>将本文分享至朋友圈</p>'
+    });
+</script>
+<script>
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+/*写入自己的disqus信息*/
+s.src = 'https://liaokeyu.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+<script src="/assets/js/prism.js"></script>
+<script src="/assets/js/index.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>使用 Excel 宏进行简单统计 - LongerONE的博客</title>
+    <meta name="author"  content="LongerONE">
+    <meta name="description" content="使用 Excel 宏进行简单统计">
+    <meta name="keywords"  content="Excel">
+    <!-- Open Graph -->
+    <meta property="og:title" content="使用 Excel 宏进行简单统计 - LongerONE的博客">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://localhost:4000/%E6%99%BA%E7%94%9F%E6%B4%BB/2016/08/23/Excel%E7%9A%84%E5%AE%8F%E7%AE%80%E5%8D%95%E5%AE%9E%E7%94%A8.html">
+    <meta property="og:description" content="一名逗比的iOS开发者">
+    <meta property="og:site_name" content="LongerONE的博客">
+    <link rel="stylesheet" href="//cdn.staticfile.org/normalize/6.0.0/normalize.min.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_roc50gemkxpw4s4i.css">
+    <link rel="stylesheet" href="/assets/css/github-markdown.css">
+    <link rel="stylesheet" href="/assets/css/prism.css">
+    <link rel="stylesheet" href="/assets/css/share.min.css">
+    <link rel="stylesheet" href="/assets/css/app.min.css">
+</head>
+<body>
+    <!--[if lt IE 10]>
+<div class="alert-danger" role="alert">你的浏览器实在太太太旧了，放学别走，升级完浏览器再说！<a target="_blank" class="alert-link" href="http://browsehappy.com">立即升级</a></div>
+<![endif]-->
+<input id="nm-switch" type="hidden" value="true">
+
+<header class="g-header">
+    <div class="g-logo">
+        <a href="/"></a>
+    </div>
+    <i id="menu-toggle" class="iconfont icon-menu"></i>
+    <nav class="g-nav">
+        <ul>
+            
+            <li><a href="/">home</a></li>
+            
+            <li><a href="/tags.html">tags</a></li>
+            
+        </ul>
+    </nav>
+</header>
+
+<header class="g-banner post-header post-pattern-food bgcolor-default " data-theme="default">
+    <div class="post-wrapper">
+        <div class="post-tags">
+             
+            
+            <a href="/tags#Excel" class="post-tag">Excel</a>
+            
+            
+        </div>
+        <h1>使用 Excel 宏进行简单统计</h1>
+        <div class="post-meta">
+            <span class="post-meta-item"><i class="iconfont icon-author"></i><a href="http://localhost:4000" target="_blank" rel="author">LongerONE</a></></span>
+            <time class="post-meta-item" datetime="16-08-23"><i class="iconfont icon-date"></i>24 Aug 2016</time>
+        </div>
+    </div>
+    
+    <div class="filter"></div>
+    <div class="post-cover" style="background: url('') center no-repeat; background-size: cover;">
+    
+</header>
+
+<div class="post-content">
+    
+    <h2 class="post-subtitle"></h2>
+    
+    <article class="markdown-body">
+        <p>总结下如何使用Excel的宏功能进行简单统计。</p>
+
+<ul>
+  <li>环境：Windows7 x64</li>
+  <li>Visual Basic 6.0</li>
+  <li>软件：WPS 2013专业版</li>
+</ul>
+
+<p>下载地址：<a href="http://pan.baidu.com/s/1skFRGxn">WPS2013 专业版及其VBA</a><br />
+提取码：<code class="highlighter-rouge">wdtc</code></p>
+
+<!-- more -->
+
+<p>不废话，直接上代码，简单暴力：</p>
+
+<pre><code class="language-vbnet">
+Private Sub kaoyan()
+'
+' 已考研统计 Macro
+'
+
+Dim b2 As Integer
+Dim b3 As Integer
+
+Dim man As Integer
+Dim women As Integer
+
+For i = 1 To 500
+'读取工作表ONE中第i行，第6列单元格的值
+    kaoyanString = Worksheets("ONE").Cells(i, 6).Value
+    
+    school = Worksheets("ONE").Cells(i, 1).Value
+    sex = Worksheets("ONE").Cells(i, 7).Value
+    
+    Dim kaoyanLen As Integer
+    kaoyanLen = Len(kaoyanString)
+    
+    If (kaoyanLen &gt; 0) Then
+    
+        If InStr(school, "二本") Then
+        'chool中包含“二本”
+           b2 = b2 + 1
+        End If
+        
+        If InStr(school, "三本") Then
+            b3 = b3 + 1
+        End If
+        
+        If InStr(sex, "男") Then
+           man = man + 1
+        End If
+        
+         If InStr(sex, "女") Then
+           woman = woman + 1
+        End If
+                
+    End If
+    
+Next
+
+‘输出统计结果
+Worksheets("TWO").Cells(10, 2).Value = b2
+Worksheets("TWO").Cells(10, 3).Value = b3
+
+Worksheets("TWO").Cells(13, 2).Value = man
+Worksheets("TWO").Cells(13, 3).Value = woman
+
+End Sub
+
+</code></pre>
+
+    </article>
+    
+    <div class="social-share-wrapper">
+        <div class="social-share"></div>
+    </div>
+    
+</div>
+
+<section class="author-detail">
+    <section class="post-footer-item author-card">
+        <div class="avatar">
+            <img src="/assets/img/profile.png" alt="">
+        </div>
+        <div class="author-name" rel="author">LongerONE</div>
+        <div class="bio">
+            <p>iOS开发者</p>
+        </div>
+        
+        <ul class="sns-links">
+            
+            <li>
+                <a href="//weibo.com/208040425" target="_blank">
+                    <i class="iconfont icon-weibo"></i>
+                </a>
+            </li>
+            
+        </ul>
+        
+    </section>
+    <section class="post-footer-item read-next">
+        
+        <div class="read-next-item">
+            <a href="/linux/2016/09/18/vsftpd%E9%94%99%E8%AF%AF553.html" class="read-next-link"></a>
+            <section>
+                <span>FTP服务器：vsftpd 上传错误 553</span>
+                <p>一、问题服务器环境： CentOS7.2 x64</p>
+            </section>
+            
+            <div class="filter"></div>
+            <img src="" alt="">
+            
+        </div>
+        
+         
+        <div class="read-next-item">
+            <a href="/ios%E5%BC%80%E5%8F%91%E6%89%8B%E6%9C%AD/2016/07/26/ReactiveCocoa%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%BA%8C.html" class="read-next-link"></a>
+            <section>
+                <span>ReactiveCocoa学习笔记（二）</span>
+                <p>本次主要学习对信号的一些操作，及值的处理。</p>
+            </section>
+            
+            <div class="filter"></div>
+            <img src="" alt="">
+            
+        </div>
+        
+    </section>
+    
+    <section class="post-footer-item comment">
+        <div id="disqus_thread"></div>
+    </section>
+    
+</section>
+
+<footer class="g-footer">
+    <section>LongerONE的博客 © 2017</section>
+    <section>Powered by <a href="//jekyllrb.com">Jekyll</a> | <a href="https://github.com/kaeyleo/jekyll-theme-H2O">Theme H2O</a></section>
+</footer>
+
+<script src="/assets/js/social-share.min.js"></script>
+<script>
+    socialShare('.social-share', {
+        sites: ['wechat','weibo','douban','twitter'],
+        wechatQrcodeTitle: "分享到微信朋友圈",
+        wechatQrcodeHelper: '<p>扫码后点击右上角</p><p>将本文分享至朋友圈</p>'
+    });
+</script>
+<script>
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+/*写入自己的disqus信息*/
+s.src = 'https://liaokeyu.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+<script src="/assets/js/prism.js"></script>
+<script src="/assets/js/index.min.js"></script>
+</body>
+</html>
