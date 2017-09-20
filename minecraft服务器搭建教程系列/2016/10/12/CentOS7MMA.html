@@ -63,7 +63,7 @@
     </div>
     
     <div class="filter"></div>
-    <div class="post-cover" style="background: url('') center no-repeat; background-size: cover;">
+    <div class="post-cover" style="background: url('/cover/MMA.png') center no-repeat; background-size: cover;">
     
 </header>
 
@@ -86,37 +86,37 @@
   <li>
     <p>首先使用以下命令安装java，如已安装则跳过：</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> yum install java
-</code></pre>
+    <div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="w"> </span><span class="err">yum</span><span class="w"> </span><span class="err">install</span><span class="w"> </span><span class="err">java</span><span class="w">
+</span></code></pre>
     </div>
   </li>
   <li>
     <p>出现如下提示则输入<code class="highlighter-rouge">y</code>后<code class="highlighter-rouge">回车</code>：</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> 事务概要
- ====================================================================================
- 安装  1 软件包 (+14 依赖软件包)
+    <div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="w"> </span><span class="err">事务概要</span><span class="w">
+ </span><span class="err">====================================================================================</span><span class="w">
+ </span><span class="err">安装</span><span class="w">  </span><span class="mi">1</span><span class="w"> </span><span class="err">软件包</span><span class="w"> </span><span class="err">(+</span><span class="mi">14</span><span class="w"> </span><span class="err">依赖软件包)</span><span class="w">
 	 
- 总下载量：34 M
- 安装大小：108 M
- Is this ok [y/d/N]:
-</code></pre>
+ </span><span class="err">总下载量：</span><span class="mi">34</span><span class="w"> </span><span class="err">M</span><span class="w">
+ </span><span class="err">安装大小：</span><span class="mi">108</span><span class="w"> </span><span class="err">M</span><span class="w">
+ </span><span class="err">Is</span><span class="w"> </span><span class="err">this</span><span class="w"> </span><span class="err">ok</span><span class="w"> </span><span class="p">[</span><span class="err">y/d/N</span><span class="p">]</span><span class="err">:</span><span class="w">
+</span></code></pre>
     </div>
   </li>
   <li>
     <p>安装完成后验证是否安装成功：</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> java -version
-</code></pre>
+    <div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="w"> </span><span class="err">java</span><span class="w"> </span><span class="err">-version</span><span class="w">
+</span></code></pre>
     </div>
   </li>
   <li>
     <p>将会显示java的版本信息：</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> openjdk version "1.8.0_102"
- OpenJDK Runtime Environment (build 1.8.0_102-b14)
- OpenJDK 64-Bit Server VM (build 25.102-b14, mixed mode)
-</code></pre>
+    <div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="w"> </span><span class="err">openjdk</span><span class="w"> </span><span class="err">version</span><span class="w"> </span><span class="s2">"1.8.0_102"</span><span class="w">
+ </span><span class="err">OpenJDK</span><span class="w"> </span><span class="err">Runtime</span><span class="w"> </span><span class="err">Environment</span><span class="w"> </span><span class="err">(build</span><span class="w"> </span><span class="mf">1.8</span><span class="err">.</span><span class="mi">0</span><span class="err">_</span><span class="mi">102</span><span class="err">-b</span><span class="mi">14</span><span class="err">)</span><span class="w">
+ </span><span class="err">OpenJDK</span><span class="w"> </span><span class="mi">64</span><span class="err">-Bit</span><span class="w"> </span><span class="err">Server</span><span class="w"> </span><span class="err">VM</span><span class="w"> </span><span class="err">(build</span><span class="w"> </span><span class="mf">25.102</span><span class="err">-b</span><span class="mi">14</span><span class="err">,</span><span class="w"> </span><span class="err">mixed</span><span class="w"> </span><span class="err">mode)</span><span class="w">
+</span></code></pre>
     </div>
   </li>
 </ul>
@@ -129,9 +129,9 @@
   <li>
     <p>在root 用户权限下执行下面命令：</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>rpm --import "http://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF"
-yum-config-manager --add-repo http://download.mono-project.com/repo/centos/
-</code></pre>
+    <div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="err">rpm</span><span class="w"> </span><span class="err">--import</span><span class="w"> </span><span class="s2">"http://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF"</span><span class="w">
+</span><span class="err">yum-config-manager</span><span class="w"> </span><span class="err">--add-repo</span><span class="w"> </span><span class="err">http://download.mono-project.com/repo/centos/</span><span class="w">
+</span></code></pre>
     </div>
   </li>
   <li>
@@ -139,53 +139,53 @@ yum-config-manager --add-repo http://download.mono-project.com/repo/centos/
   </li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>  yum -y install yum-utils
-</code></pre>
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="w">  </span><span class="err">yum</span><span class="w"> </span><span class="err">-y</span><span class="w"> </span><span class="err">install</span><span class="w"> </span><span class="err">yum-utils</span><span class="w">
+</span></code></pre>
 </div>
 <ul>
   <li>安装mono</li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>  yum install mono
-</code></pre>
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="w">  </span><span class="err">yum</span><span class="w"> </span><span class="err">install</span><span class="w"> </span><span class="err">mono</span><span class="w">
+</span></code></pre>
 </div>
 
 <ul>
   <li>验证：</li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>  mono
-</code></pre>
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="w">  </span><span class="err">mono</span><span class="w">
+</span></code></pre>
 </div>
 
 <ul>
   <li>将会显示mono的提示信息：</li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>`Usage is: mono [options] program [program-options]
-Development:
-	--aot[=&lt;options&gt;]      Compiles the assembly to native code
-	--debug[=&lt;options&gt;]    Enable debugging support, use --help-debug for details
-	--debugger-agent=options Enable the debugger agent
-	--profile[=profiler]   Runs in profiling mode with the specified profiler module
-	--trace[=EXPR]         Enable tracing, use --help-trace for details
-	--jitmap               Output a jit method map to /tmp/perf-PID.map
-	--help-devel           Shows more options available to developers
-Runtime:
-	--config FILE          Loads FILE as the Mono config
-	--verbose, -v          Increases the verbosity level
-	--help, -h             Show usage information
-	--version, -V          Show version information
-	--runtime=VERSION      Use the VERSION runtime, instead of autodetecting
-	--optimize=OPT         Turns on or off a specific optimization
-	                       Use --list-opt to get a list of optimizations
-	--security[=mode]      Turns on the unsupported security manager (off by default)
-	                       mode is one of cas, core-clr, verifiable or validil
-	--attach=OPTIONS       Pass OPTIONS to the attach agent in the runtime.
-	                       Currently the only supported option is 'disable'.
-	--llvm, --nollvm       Controls whenever the runtime uses LLVM to compile code.
-	--gc=[sgen,boehm]      Select SGen or Boehm GC (runs mono or mono-sgen)
-</code></pre>
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="err">`Usage</span><span class="w"> </span><span class="err">is:</span><span class="w"> </span><span class="err">mono</span><span class="w"> </span><span class="p">[</span><span class="err">options</span><span class="p">]</span><span class="w"> </span><span class="err">program</span><span class="w"> </span><span class="p">[</span><span class="err">program-options</span><span class="p">]</span><span class="w">
+</span><span class="err">Development:</span><span class="w">
+	</span><span class="err">--aot</span><span class="p">[</span><span class="err">=&lt;options&gt;</span><span class="p">]</span><span class="w">      </span><span class="err">Compiles</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">assembly</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">native</span><span class="w"> </span><span class="err">code</span><span class="w">
+	</span><span class="err">--debug</span><span class="p">[</span><span class="err">=&lt;options&gt;</span><span class="p">]</span><span class="w">    </span><span class="err">Enable</span><span class="w"> </span><span class="err">debugging</span><span class="w"> </span><span class="err">support,</span><span class="w"> </span><span class="err">use</span><span class="w"> </span><span class="err">--help-debug</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">details</span><span class="w">
+	</span><span class="err">--debugger-agent=options</span><span class="w"> </span><span class="err">Enable</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">debugger</span><span class="w"> </span><span class="err">agent</span><span class="w">
+	</span><span class="err">--profile</span><span class="p">[</span><span class="err">=profiler</span><span class="p">]</span><span class="w">   </span><span class="err">Runs</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">profiling</span><span class="w"> </span><span class="err">mode</span><span class="w"> </span><span class="err">with</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">specified</span><span class="w"> </span><span class="err">profiler</span><span class="w"> </span><span class="err">module</span><span class="w">
+	</span><span class="err">--trace</span><span class="p">[</span><span class="err">=EXPR</span><span class="p">]</span><span class="w">         </span><span class="err">Enable</span><span class="w"> </span><span class="err">tracing,</span><span class="w"> </span><span class="err">use</span><span class="w"> </span><span class="err">--help-trace</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">details</span><span class="w">
+	</span><span class="err">--jitmap</span><span class="w">               </span><span class="err">Output</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">jit</span><span class="w"> </span><span class="err">method</span><span class="w"> </span><span class="err">map</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">/tmp/perf-PID.map</span><span class="w">
+	</span><span class="err">--help-devel</span><span class="w">           </span><span class="err">Shows</span><span class="w"> </span><span class="err">more</span><span class="w"> </span><span class="err">options</span><span class="w"> </span><span class="err">available</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">developers</span><span class="w">
+</span><span class="err">Runtime:</span><span class="w">
+	</span><span class="err">--config</span><span class="w"> </span><span class="err">FILE</span><span class="w">          </span><span class="err">Loads</span><span class="w"> </span><span class="err">FILE</span><span class="w"> </span><span class="err">as</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">Mono</span><span class="w"> </span><span class="err">config</span><span class="w">
+	</span><span class="err">--verbose,</span><span class="w"> </span><span class="err">-v</span><span class="w">          </span><span class="err">Increases</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">verbosity</span><span class="w"> </span><span class="err">level</span><span class="w">
+	</span><span class="err">--help,</span><span class="w"> </span><span class="err">-h</span><span class="w">             </span><span class="err">Show</span><span class="w"> </span><span class="err">usage</span><span class="w"> </span><span class="err">information</span><span class="w">
+	</span><span class="err">--version,</span><span class="w"> </span><span class="err">-V</span><span class="w">          </span><span class="err">Show</span><span class="w"> </span><span class="err">version</span><span class="w"> </span><span class="err">information</span><span class="w">
+	</span><span class="err">--runtime=VERSION</span><span class="w">      </span><span class="err">Use</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">VERSION</span><span class="w"> </span><span class="err">runtime,</span><span class="w"> </span><span class="err">instead</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">autodetecting</span><span class="w">
+	</span><span class="err">--optimize=OPT</span><span class="w">         </span><span class="err">Turns</span><span class="w"> </span><span class="err">on</span><span class="w"> </span><span class="err">or</span><span class="w"> </span><span class="err">off</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">specific</span><span class="w"> </span><span class="err">optimization</span><span class="w">
+	                       </span><span class="err">Use</span><span class="w"> </span><span class="err">--list-opt</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">get</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">list</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">optimizations</span><span class="w">
+	</span><span class="err">--security</span><span class="p">[</span><span class="err">=mode</span><span class="p">]</span><span class="w">      </span><span class="err">Turns</span><span class="w"> </span><span class="err">on</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">unsupported</span><span class="w"> </span><span class="err">security</span><span class="w"> </span><span class="err">manager</span><span class="w"> </span><span class="err">(off</span><span class="w"> </span><span class="err">by</span><span class="w"> </span><span class="err">default)</span><span class="w">
+	                       </span><span class="err">mode</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">one</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">cas,</span><span class="w"> </span><span class="err">core-clr,</span><span class="w"> </span><span class="err">verifiable</span><span class="w"> </span><span class="err">or</span><span class="w"> </span><span class="err">validil</span><span class="w">
+	</span><span class="err">--attach=OPTIONS</span><span class="w">       </span><span class="err">Pass</span><span class="w"> </span><span class="err">OPTIONS</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">attach</span><span class="w"> </span><span class="err">agent</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">runtime.</span><span class="w">
+	                       </span><span class="err">Currently</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">only</span><span class="w"> </span><span class="err">supported</span><span class="w"> </span><span class="err">option</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">'disable'.</span><span class="w">
+	</span><span class="err">--llvm,</span><span class="w"> </span><span class="err">--nollvm</span><span class="w">       </span><span class="err">Controls</span><span class="w"> </span><span class="err">whenever</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">runtime</span><span class="w"> </span><span class="err">uses</span><span class="w"> </span><span class="err">LLVM</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">compile</span><span class="w"> </span><span class="err">code.</span><span class="w">
+	</span><span class="err">--gc=</span><span class="p">[</span><span class="err">sgen</span><span class="p">,</span><span class="err">boehm</span><span class="p">]</span><span class="w">      </span><span class="err">Select</span><span class="w"> </span><span class="err">SGen</span><span class="w"> </span><span class="err">or</span><span class="w"> </span><span class="err">Boehm</span><span class="w"> </span><span class="err">GC</span><span class="w"> </span><span class="err">(runs</span><span class="w"> </span><span class="err">mono</span><span class="w"> </span><span class="err">or</span><span class="w"> </span><span class="err">mono-sgen)</span><span class="w">
+</span></code></pre>
 </div>
 <p>`<br />
   #### 运行McMyAdmin</p>
@@ -195,16 +195,16 @@ Runtime:
   <li>解压压缩包，如未压缩则跳过此步骤，例如：</li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>  unzip MMA.zip
-</code></pre>
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="w">  </span><span class="err">unzip</span><span class="w"> </span><span class="err">MMA.zip</span><span class="w">
+</span></code></pre>
 </div>
 
 <ul>
   <li>设置管理密码:</li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>  mono McMyAdmin.exe -setpass [YOURPASSWORD] -configonly
-</code></pre>
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="w">  </span><span class="err">mono</span><span class="w"> </span><span class="err">McMyAdmin.exe</span><span class="w"> </span><span class="err">-setpass</span><span class="w"> </span><span class="p">[</span><span class="err">YOURPASSWORD</span><span class="p">]</span><span class="w"> </span><span class="err">-configonly</span><span class="w">
+</span></code></pre>
 </div>
 
 <ul>
@@ -216,17 +216,17 @@ Runtime:
   </li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>  mono McMyAdmin.exe
-</code></pre>
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="w">  </span><span class="err">mono</span><span class="w"> </span><span class="err">McMyAdmin.exe</span><span class="w">
+</span></code></pre>
 </div>
 
 <ul>
   <li>将会出现如下提示：</li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>Notice  : This is the first time McMyAdmin has been started.
-Notice  : You must complete the first-start wizard via the web interface.
-</code></pre>
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="err">Notice</span><span class="w">  </span><span class="err">:</span><span class="w"> </span><span class="err">This</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">first</span><span class="w"> </span><span class="err">time</span><span class="w"> </span><span class="err">McMyAdmin</span><span class="w"> </span><span class="err">has</span><span class="w"> </span><span class="err">been</span><span class="w"> </span><span class="err">started.</span><span class="w">
+</span><span class="err">Notice</span><span class="w">  </span><span class="err">:</span><span class="w"> </span><span class="err">You</span><span class="w"> </span><span class="err">must</span><span class="w"> </span><span class="err">complete</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">first-start</span><span class="w"> </span><span class="err">wizard</span><span class="w"> </span><span class="err">via</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">web</span><span class="w"> </span><span class="err">interface.</span><span class="w">
+</span></code></pre>
 </div>
 
 <ul>
@@ -242,8 +242,8 @@ Notice  : You must complete the first-start wizard via the web interface.
   <li>
     <p>推荐使用其他用户来运行MMA，推荐使用FTP相同的账户<code class="highlighter-rouge">ftpuser</code>（需要打开shell权限）</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>su ftpuser -l -c "mono McMyAdmin.exe"
-</code></pre>
+    <div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="err">su</span><span class="w"> </span><span class="err">ftpuser</span><span class="w"> </span><span class="err">-l</span><span class="w"> </span><span class="err">-c</span><span class="w"> </span><span class="s2">"mono McMyAdmin.exe"</span><span class="w">
+</span></code></pre>
     </div>
   </li>
 </ul>
@@ -254,24 +254,24 @@ Notice  : You must complete the first-start wizard via the web interface.
   <li>使用如下指令查看进程状态:</li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>  ps aux | grep mono
-</code></pre>
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="w">  </span><span class="err">ps</span><span class="w"> </span><span class="err">aux</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="err">grep</span><span class="w"> </span><span class="err">mono</span><span class="w">
+</span></code></pre>
 </div>
 
 <ul>
   <li>将会显示McMyAdmin的进程信息,<code class="highlighter-rouge">10071</code>为进程ID：</li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>  root      10071 66.6  6.2 1326964 63068 ?       Sl   10:11   0:22 mono McMyAdmin.exe
-</code></pre>
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="w">  </span><span class="err">root</span><span class="w">      </span><span class="mi">10071</span><span class="w"> </span><span class="mf">66.6</span><span class="w">  </span><span class="mf">6.2</span><span class="w"> </span><span class="mi">1326964</span><span class="w"> </span><span class="mi">63068</span><span class="w"> </span><span class="err">?</span><span class="w">       </span><span class="err">Sl</span><span class="w">   </span><span class="mi">10</span><span class="err">:</span><span class="mi">11</span><span class="w">   </span><span class="mi">0</span><span class="err">:</span><span class="mi">22</span><span class="w"> </span><span class="err">mono</span><span class="w"> </span><span class="err">McMyAdmin.exe</span><span class="w">
+</span></code></pre>
 </div>
 
 <ul>
   <li>使用如下指令关闭进程（<strong>先正常关闭服务器以防止数据丢失</strong>）:</li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>  kill 10071
-</code></pre>
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="w">  </span><span class="err">kill</span><span class="w"> </span><span class="mi">10071</span><span class="w">
+</span></code></pre>
 </div>
 
 <h4 id="添加快速启动脚本">添加快速启动脚本</h4>
@@ -280,16 +280,16 @@ Notice  : You must complete the first-start wizard via the web interface.
   <li>新建一个sh脚本：</li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>  vi start.sh
-</code></pre>
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="w">  </span><span class="err">vi</span><span class="w"> </span><span class="err">start.sh</span><span class="w">
+</span></code></pre>
 </div>
 
 <ul>
   <li>然后按<code class="highlighter-rouge">i</code>进入编辑插入模式，左下角会提示<code class="highlighter-rouge">INSERT</code>,随后将启动指令输入：</li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>  su ftpuser -l -c "mono McMyAdmin.exe"
-</code></pre>
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="w">  </span><span class="err">su</span><span class="w"> </span><span class="err">ftpuser</span><span class="w"> </span><span class="err">-l</span><span class="w"> </span><span class="err">-c</span><span class="w"> </span><span class="s2">"mono McMyAdmin.exe"</span><span class="w">
+</span></code></pre>
 </div>
 
 <ul>
@@ -301,16 +301,16 @@ Notice  : You must complete the first-start wizard via the web interface.
   </li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>  chmod +x start.sh
-</code></pre>
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="w">  </span><span class="err">chmod</span><span class="w"> </span><span class="err">+x</span><span class="w"> </span><span class="err">start.sh</span><span class="w">
+</span></code></pre>
 </div>
 
 <ul>
   <li>然后输入以下指令启动McMyAdmin并在后台运行:</li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>  ./start.sh
-</code></pre>
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="w">  </span><span class="err">./start.sh</span><span class="w">
+</span></code></pre>
 </div>
 
 <p><strong>教程完毕</strong></p>
@@ -355,7 +355,7 @@ Notice  : You must complete the first-start wizard via the web interface.
             </section>
             
             <div class="filter"></div>
-            <img src="/images/baidunetdisk.png" alt="">
+            <img src="/cover/baidunetdisk.png" alt="">
             
         </div>
         

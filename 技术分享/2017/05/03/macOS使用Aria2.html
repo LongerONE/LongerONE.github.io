@@ -118,108 +118,108 @@
 
 <p>部分配置说明，根据实际使用情况修改：</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>## '#'开头为注释内容, 选项都有相应的注释说明, 根据需要修改 ##
-## 被注释的选项填写的是默认值, 建议在需要修改时再取消注释  ##
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="err">##</span><span class="w"> </span><span class="err">'#'开头为注释内容,</span><span class="w"> </span><span class="err">选项都有相应的注释说明,</span><span class="w"> </span><span class="err">根据需要修改</span><span class="w"> </span><span class="err">##</span><span class="w">
+</span><span class="err">##</span><span class="w"> </span><span class="err">被注释的选项填写的是默认值,</span><span class="w"> </span><span class="err">建议在需要修改时再取消注释</span><span class="w">  </span><span class="err">##</span><span class="w">
 
-## 文件保存相关 ##
+</span><span class="err">##</span><span class="w"> </span><span class="err">文件保存相关</span><span class="w"> </span><span class="err">##</span><span class="w">
 
-# 文件的保存路径(可使用绝对路径或相对路径), 默认: 当前启动位置
-dir=~/downloads
-# 启用磁盘缓存, 0为禁用缓存, 需1.16以上版本, 默认:16M
-#disk-cache=32M
-# 文件预分配方式, 能有效降低磁盘碎片, 默认:prealloc
-# 预分配所需时间: none &lt; falloc ? trunc &lt; prealloc
-# falloc和trunc则需要文件系统和内核支持
-# NTFS建议使用falloc, EXT3/4建议trunc, MAC 下需要注释此项
-file-allocation=none
-# 断点续传
-continue=true
+</span><span class="err">#</span><span class="w"> </span><span class="err">文件的保存路径(可使用绝对路径或相对路径),</span><span class="w"> </span><span class="err">默认:</span><span class="w"> </span><span class="err">当前启动位置</span><span class="w">
+</span><span class="err">dir=~/downloads</span><span class="w">
+</span><span class="err">#</span><span class="w"> </span><span class="err">启用磁盘缓存,</span><span class="w"> </span><span class="mi">0</span><span class="err">为禁用缓存,</span><span class="w"> </span><span class="err">需</span><span class="mf">1.16</span><span class="err">以上版本,</span><span class="w"> </span><span class="err">默认:</span><span class="mi">16</span><span class="err">M</span><span class="w">
+</span><span class="err">#disk-cache=</span><span class="mi">32</span><span class="err">M</span><span class="w">
+</span><span class="err">#</span><span class="w"> </span><span class="err">文件预分配方式,</span><span class="w"> </span><span class="err">能有效降低磁盘碎片,</span><span class="w"> </span><span class="err">默认:prealloc</span><span class="w">
+</span><span class="err">#</span><span class="w"> </span><span class="err">预分配所需时间:</span><span class="w"> </span><span class="err">none</span><span class="w"> </span><span class="err">&lt;</span><span class="w"> </span><span class="err">falloc</span><span class="w"> </span><span class="err">?</span><span class="w"> </span><span class="err">trunc</span><span class="w"> </span><span class="err">&lt;</span><span class="w"> </span><span class="err">prealloc</span><span class="w">
+</span><span class="err">#</span><span class="w"> </span><span class="err">falloc和trunc则需要文件系统和内核支持</span><span class="w">
+</span><span class="err">#</span><span class="w"> </span><span class="err">NTFS建议使用falloc,</span><span class="w"> </span><span class="err">EXT</span><span class="mi">3</span><span class="err">/</span><span class="mi">4</span><span class="err">建议trunc,</span><span class="w"> </span><span class="err">MAC</span><span class="w"> </span><span class="err">下需要注释此项</span><span class="w">
+</span><span class="err">file-allocation=none</span><span class="w">
+</span><span class="err">#</span><span class="w"> </span><span class="err">断点续传</span><span class="w">
+</span><span class="err">continue=</span><span class="kc">true</span><span class="w">
 
-## 下载连接相关 ##
+</span><span class="err">##</span><span class="w"> </span><span class="err">下载连接相关</span><span class="w"> </span><span class="err">##</span><span class="w">
 
-# 最大同时下载任务数, 运行时可修改, 默认:5
-max-concurrent-downloads=1
-# 同一服务器连接数, 添加时可指定, 默认:1
-max-connection-per-server=5
-# 最小文件分片大小, 添加时可指定, 取值范围1M -1024M, 默认:20M
-# 假定size=10M, 文件为20MiB 则使用两个来源下载; 文件为15MiB 则使用一个来源下载
-min-split-size=10M
-# 单个任务最大线程数, 添加时可指定, 默认:5
-split=5
-# 整体下载速度限制, 运行时可修改, 默认:0
-#max-overall-download-limit=0
-# 单个任务下载速度限制, 默认:0
-#max-download-limit=0
-# 整体上传速度限制, 运行时可修改, 默认:0
-#max-overall-upload-limit=0
-# 单个任务上传速度限制, 默认:0
-#max-upload-limit=0
-# 禁用IPv6, 默认:false
-disable-ipv6=true
+</span><span class="err">#</span><span class="w"> </span><span class="err">最大同时下载任务数,</span><span class="w"> </span><span class="err">运行时可修改,</span><span class="w"> </span><span class="err">默认:</span><span class="mi">5</span><span class="w">
+</span><span class="err">max-concurrent-downloads=</span><span class="mi">1</span><span class="w">
+</span><span class="err">#</span><span class="w"> </span><span class="err">同一服务器连接数,</span><span class="w"> </span><span class="err">添加时可指定,</span><span class="w"> </span><span class="err">默认:</span><span class="mi">1</span><span class="w">
+</span><span class="err">max-connection-per-server=</span><span class="mi">5</span><span class="w">
+</span><span class="err">#</span><span class="w"> </span><span class="err">最小文件分片大小,</span><span class="w"> </span><span class="err">添加时可指定,</span><span class="w"> </span><span class="err">取值范围</span><span class="mi">1</span><span class="err">M</span><span class="w"> </span><span class="mi">-1024</span><span class="err">M,</span><span class="w"> </span><span class="err">默认:</span><span class="mi">20</span><span class="err">M</span><span class="w">
+</span><span class="err">#</span><span class="w"> </span><span class="err">假定size=</span><span class="mi">10</span><span class="err">M,</span><span class="w"> </span><span class="err">文件为</span><span class="mi">20</span><span class="err">MiB</span><span class="w"> </span><span class="err">则使用两个来源下载;</span><span class="w"> </span><span class="err">文件为</span><span class="mi">15</span><span class="err">MiB</span><span class="w"> </span><span class="err">则使用一个来源下载</span><span class="w">
+</span><span class="err">min-split-size=</span><span class="mi">10</span><span class="err">M</span><span class="w">
+</span><span class="err">#</span><span class="w"> </span><span class="err">单个任务最大线程数,</span><span class="w"> </span><span class="err">添加时可指定,</span><span class="w"> </span><span class="err">默认:</span><span class="mi">5</span><span class="w">
+</span><span class="err">split=</span><span class="mi">5</span><span class="w">
+</span><span class="err">#</span><span class="w"> </span><span class="err">整体下载速度限制,</span><span class="w"> </span><span class="err">运行时可修改,</span><span class="w"> </span><span class="err">默认:</span><span class="mi">0</span><span class="w">
+</span><span class="err">#max-overall-download-limit=</span><span class="mi">0</span><span class="w">
+</span><span class="err">#</span><span class="w"> </span><span class="err">单个任务下载速度限制,</span><span class="w"> </span><span class="err">默认:</span><span class="mi">0</span><span class="w">
+</span><span class="err">#max-download-limit=</span><span class="mi">0</span><span class="w">
+</span><span class="err">#</span><span class="w"> </span><span class="err">整体上传速度限制,</span><span class="w"> </span><span class="err">运行时可修改,</span><span class="w"> </span><span class="err">默认:</span><span class="mi">0</span><span class="w">
+</span><span class="err">#max-overall-upload-limit=</span><span class="mi">0</span><span class="w">
+</span><span class="err">#</span><span class="w"> </span><span class="err">单个任务上传速度限制,</span><span class="w"> </span><span class="err">默认:</span><span class="mi">0</span><span class="w">
+</span><span class="err">#max-upload-limit=</span><span class="mi">0</span><span class="w">
+</span><span class="err">#</span><span class="w"> </span><span class="err">禁用IPv</span><span class="mi">6</span><span class="err">,</span><span class="w"> </span><span class="err">默认:</span><span class="kc">false</span><span class="w">
+</span><span class="err">disable-ipv</span><span class="mi">6</span><span class="err">=</span><span class="kc">true</span><span class="w">
 
-## 进度保存相关 ##
+</span><span class="err">##</span><span class="w"> </span><span class="err">进度保存相关</span><span class="w"> </span><span class="err">##</span><span class="w">
 
-# 从会话文件中读取下载任务
-input-file=/etc/aria2/aria2.session
-# 在Aria2退出时保存`错误/未完成`的下载任务到会话文件
-save-session=/etc/aria2/aria2.session
-# 定时保存会话, 0为退出时才保存, 需1.16.1以上版本, 默认:0
-#save-session-interval=60
+</span><span class="err">#</span><span class="w"> </span><span class="err">从会话文件中读取下载任务</span><span class="w">
+</span><span class="err">input-file=/etc/aria</span><span class="mi">2</span><span class="err">/aria</span><span class="mi">2</span><span class="err">.session</span><span class="w">
+</span><span class="err">#</span><span class="w"> </span><span class="err">在Aria</span><span class="mi">2</span><span class="err">退出时保存`错误/未完成`的下载任务到会话文件</span><span class="w">
+</span><span class="err">save-session=/etc/aria</span><span class="mi">2</span><span class="err">/aria</span><span class="mi">2</span><span class="err">.session</span><span class="w">
+</span><span class="err">#</span><span class="w"> </span><span class="err">定时保存会话,</span><span class="w"> </span><span class="mi">0</span><span class="err">为退出时才保存,</span><span class="w"> </span><span class="err">需</span><span class="mf">1.16</span><span class="err">.</span><span class="mi">1</span><span class="err">以上版本,</span><span class="w"> </span><span class="err">默认:</span><span class="mi">0</span><span class="w">
+</span><span class="err">#save-session-interval=</span><span class="mi">60</span><span class="w">
 
-## RPC相关设置 ##
+</span><span class="err">##</span><span class="w"> </span><span class="err">RPC相关设置</span><span class="w"> </span><span class="err">##</span><span class="w">
 
-# 启用RPC, 默认:false
-enable-rpc=true
-# 允许所有来源, 默认:false
-rpc-allow-origin-all=true
-# 允许非外部访问, 默认:false
-rpc-listen-all=true
-# 事件轮询方式, 取值:[epoll, kqueue, port, poll, select], 不同系统默认值不同
-#event-poll=select
-# RPC监听端口, 端口被占用时可以修改, 默认:6800
-#rpc-listen-port=6800
-# 设置的RPC授权令牌, v1.18.4新增功能, 取代 --rpc-user 和 --rpc-passwd 选项
-#rpc-secret=&lt;TOKEN&gt;
-# 设置的RPC访问用户名, 此选项新版已废弃, 建议改用 --rpc-secret 选项
-#rpc-user=&lt;USER&gt;
-# 设置的RPC访问密码, 此选项新版已废弃, 建议改用 --rpc-secret 选项
-#rpc-passwd=&lt;PASSWD&gt;
+</span><span class="err">#</span><span class="w"> </span><span class="err">启用RPC,</span><span class="w"> </span><span class="err">默认:</span><span class="kc">false</span><span class="w">
+</span><span class="err">enable-rpc=</span><span class="kc">true</span><span class="w">
+</span><span class="err">#</span><span class="w"> </span><span class="err">允许所有来源,</span><span class="w"> </span><span class="err">默认:</span><span class="kc">false</span><span class="w">
+</span><span class="err">rpc-allow-origin-all=</span><span class="kc">true</span><span class="w">
+</span><span class="err">#</span><span class="w"> </span><span class="err">允许非外部访问,</span><span class="w"> </span><span class="err">默认:</span><span class="kc">false</span><span class="w">
+</span><span class="err">rpc-listen-all=</span><span class="kc">true</span><span class="w">
+</span><span class="err">#</span><span class="w"> </span><span class="err">事件轮询方式,</span><span class="w"> </span><span class="err">取值:</span><span class="p">[</span><span class="err">epoll</span><span class="p">,</span><span class="w"> </span><span class="err">kqueue</span><span class="p">,</span><span class="w"> </span><span class="err">port</span><span class="p">,</span><span class="w"> </span><span class="err">poll</span><span class="p">,</span><span class="w"> </span><span class="err">select</span><span class="p">]</span><span class="err">,</span><span class="w"> </span><span class="err">不同系统默认值不同</span><span class="w">
+</span><span class="err">#event-poll=select</span><span class="w">
+</span><span class="err">#</span><span class="w"> </span><span class="err">RPC监听端口,</span><span class="w"> </span><span class="err">端口被占用时可以修改,</span><span class="w"> </span><span class="err">默认:</span><span class="mi">6800</span><span class="w">
+</span><span class="err">#rpc-listen-port=</span><span class="mi">6800</span><span class="w">
+</span><span class="err">#</span><span class="w"> </span><span class="err">设置的RPC授权令牌,</span><span class="w"> </span><span class="err">v</span><span class="mf">1.18</span><span class="err">.</span><span class="mi">4</span><span class="err">新增功能,</span><span class="w"> </span><span class="err">取代</span><span class="w"> </span><span class="err">--rpc-user</span><span class="w"> </span><span class="err">和</span><span class="w"> </span><span class="err">--rpc-passwd</span><span class="w"> </span><span class="err">选项</span><span class="w">
+</span><span class="err">#rpc-secret=&lt;TOKEN&gt;</span><span class="w">
+</span><span class="err">#</span><span class="w"> </span><span class="err">设置的RPC访问用户名,</span><span class="w"> </span><span class="err">此选项新版已废弃,</span><span class="w"> </span><span class="err">建议改用</span><span class="w"> </span><span class="err">--rpc-secret</span><span class="w"> </span><span class="err">选项</span><span class="w">
+</span><span class="err">#rpc-user=&lt;USER&gt;</span><span class="w">
+</span><span class="err">#</span><span class="w"> </span><span class="err">设置的RPC访问密码,</span><span class="w"> </span><span class="err">此选项新版已废弃,</span><span class="w"> </span><span class="err">建议改用</span><span class="w"> </span><span class="err">--rpc-secret</span><span class="w"> </span><span class="err">选项</span><span class="w">
+</span><span class="err">#rpc-passwd=&lt;PASSWD&gt;</span><span class="w">
 
-## BT/PT下载相关 ##
+</span><span class="err">##</span><span class="w"> </span><span class="err">BT/PT下载相关</span><span class="w"> </span><span class="err">##</span><span class="w">
 
-# 当下载的是一个种子(以.torrent结尾)时, 自动开始BT任务, 默认:true
-#follow-torrent=true
-# BT监听端口, 当端口被屏蔽时使用, 默认:6881-6999
-listen-port=51413
-# 单个种子最大连接数, 默认:55
-#bt-max-peers=55
-# 打开DHT功能, PT需要禁用, 默认:true
-enable-dht=false
-# 打开IPv6 DHT功能, PT需要禁用
-#enable-dht6=false
-# DHT网络监听端口, 默认:6881-6999
-#dht-listen-port=6881-6999
-# 本地节点查找, PT需要禁用, 默认:false
-#bt-enable-lpd=false
-# 种子交换, PT需要禁用, 默认:true
-enable-peer-exchange=false
-# 每个种子限速, 对少种的PT很有用, 默认:50K
-#bt-request-peer-speed-limit=50K
-# 客户端伪装, PT需要
-peer-id-prefix=-TR2770-
-user-agent=Transmission/2.77
-# 当种子的分享率达到这个数时, 自动停止做种, 0为一直做种, 默认:1.0
-seed-ratio=0
-# 强制保存会话, 即使任务已经完成, 默认:false
-# 较新的版本开启后会在任务完成后依然保留.aria2文件
-#force-save=false
-# BT校验相关, 默认:true
-#bt-hash-check-seed=true
-# 继续之前的BT任务时, 无需再次校验, 默认:false
-bt-seed-unverified=true
-# 保存磁力链接元数据为种子文件(.torrent文件), 默认:false
-bt-save-metadata=true
-</code></pre>
+</span><span class="err">#</span><span class="w"> </span><span class="err">当下载的是一个种子(以.torrent结尾)时,</span><span class="w"> </span><span class="err">自动开始BT任务,</span><span class="w"> </span><span class="err">默认:</span><span class="kc">true</span><span class="w">
+</span><span class="err">#follow-torrent=</span><span class="kc">true</span><span class="w">
+</span><span class="err">#</span><span class="w"> </span><span class="err">BT监听端口,</span><span class="w"> </span><span class="err">当端口被屏蔽时使用,</span><span class="w"> </span><span class="err">默认:</span><span class="mi">6881-6999</span><span class="w">
+</span><span class="err">listen-port=</span><span class="mi">51413</span><span class="w">
+</span><span class="err">#</span><span class="w"> </span><span class="err">单个种子最大连接数,</span><span class="w"> </span><span class="err">默认:</span><span class="mi">55</span><span class="w">
+</span><span class="err">#bt-max-peers=</span><span class="mi">55</span><span class="w">
+</span><span class="err">#</span><span class="w"> </span><span class="err">打开DHT功能,</span><span class="w"> </span><span class="err">PT需要禁用,</span><span class="w"> </span><span class="err">默认:</span><span class="kc">true</span><span class="w">
+</span><span class="err">enable-dht=</span><span class="kc">false</span><span class="w">
+</span><span class="err">#</span><span class="w"> </span><span class="err">打开IPv</span><span class="mi">6</span><span class="w"> </span><span class="err">DHT功能,</span><span class="w"> </span><span class="err">PT需要禁用</span><span class="w">
+</span><span class="err">#enable-dht</span><span class="mi">6</span><span class="err">=</span><span class="kc">false</span><span class="w">
+</span><span class="err">#</span><span class="w"> </span><span class="err">DHT网络监听端口,</span><span class="w"> </span><span class="err">默认:</span><span class="mi">6881-6999</span><span class="w">
+</span><span class="err">#dht-listen-port=</span><span class="mi">6881-6999</span><span class="w">
+</span><span class="err">#</span><span class="w"> </span><span class="err">本地节点查找,</span><span class="w"> </span><span class="err">PT需要禁用,</span><span class="w"> </span><span class="err">默认:</span><span class="kc">false</span><span class="w">
+</span><span class="err">#bt-enable-lpd=</span><span class="kc">false</span><span class="w">
+</span><span class="err">#</span><span class="w"> </span><span class="err">种子交换,</span><span class="w"> </span><span class="err">PT需要禁用,</span><span class="w"> </span><span class="err">默认:</span><span class="kc">true</span><span class="w">
+</span><span class="err">enable-peer-exchange=</span><span class="kc">false</span><span class="w">
+</span><span class="err">#</span><span class="w"> </span><span class="err">每个种子限速,</span><span class="w"> </span><span class="err">对少种的PT很有用,</span><span class="w"> </span><span class="err">默认:</span><span class="mi">50</span><span class="err">K</span><span class="w">
+</span><span class="err">#bt-request-peer-speed-limit=</span><span class="mi">50</span><span class="err">K</span><span class="w">
+</span><span class="err">#</span><span class="w"> </span><span class="err">客户端伪装,</span><span class="w"> </span><span class="err">PT需要</span><span class="w">
+</span><span class="err">peer-id-prefix=-TR</span><span class="mi">2770</span><span class="err">-</span><span class="w">
+</span><span class="err">user-agent=Transmission/</span><span class="mf">2.77</span><span class="w">
+</span><span class="err">#</span><span class="w"> </span><span class="err">当种子的分享率达到这个数时,</span><span class="w"> </span><span class="err">自动停止做种,</span><span class="w"> </span><span class="mi">0</span><span class="err">为一直做种,</span><span class="w"> </span><span class="err">默认:</span><span class="mf">1.0</span><span class="w">
+</span><span class="err">seed-ratio=</span><span class="mi">0</span><span class="w">
+</span><span class="err">#</span><span class="w"> </span><span class="err">强制保存会话,</span><span class="w"> </span><span class="err">即使任务已经完成,</span><span class="w"> </span><span class="err">默认:</span><span class="kc">false</span><span class="w">
+</span><span class="err">#</span><span class="w"> </span><span class="err">较新的版本开启后会在任务完成后依然保留.aria</span><span class="mi">2</span><span class="err">文件</span><span class="w">
+</span><span class="err">#force-save=</span><span class="kc">false</span><span class="w">
+</span><span class="err">#</span><span class="w"> </span><span class="err">BT校验相关,</span><span class="w"> </span><span class="err">默认:</span><span class="kc">true</span><span class="w">
+</span><span class="err">#bt-hash-check-seed=</span><span class="kc">true</span><span class="w">
+</span><span class="err">#</span><span class="w"> </span><span class="err">继续之前的BT任务时,</span><span class="w"> </span><span class="err">无需再次校验,</span><span class="w"> </span><span class="err">默认:</span><span class="kc">false</span><span class="w">
+</span><span class="err">bt-seed-unverified=</span><span class="kc">true</span><span class="w">
+</span><span class="err">#</span><span class="w"> </span><span class="err">保存磁力链接元数据为种子文件(.torrent文件),</span><span class="w"> </span><span class="err">默认:</span><span class="kc">false</span><span class="w">
+</span><span class="err">bt-save-metadata=</span><span class="kc">true</span><span class="w">
+</span></code></pre>
 </div>
 
 
@@ -263,7 +263,7 @@ bt-save-metadata=true
             </section>
             
             <div class="filter"></div>
-            <img src="" alt="">
+            <img src="/cover/minecraft.jpeg" alt="">
             
         </div>
         
