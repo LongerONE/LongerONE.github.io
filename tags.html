@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tags - LongerONE的博客</title>
     <meta name="author"  content="LongerONE">
-    <meta name="description" content="一名逗比的iOS开发者">
+    <meta name="description" content="iOS 开发者,Minecraft 腐竹">
     <meta name="keywords"  content="LongerONE,iOS,Minecraft,UI">
     <!-- Open Graph -->
     <meta property="og:title" content="Tags - LongerONE的博客">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="http://localhost:4000/tags.html">
-    <meta property="og:description" content="一名逗比的iOS开发者">
+    <meta property="og:url" content="http://localhost:4000/tags">
+    <meta property="og:description" content="iOS 开发者,Minecraft 腐竹">
     <meta property="og:site_name" content="LongerONE的博客">
     <link rel="stylesheet" href="//cdn.staticfile.org/normalize/6.0.0/normalize.min.css">
     <link rel="stylesheet" href="//at.alicdn.com/t/font_roc50gemkxpw4s4i.css">
@@ -19,32 +19,35 @@
     <link rel="stylesheet" href="/assets/css/prism.css">
     <link rel="stylesheet" href="/assets/css/share.min.css">
     <link rel="stylesheet" href="/assets/css/app.min.css">
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></script>
 </head>
+
 <body>
     <!--[if lt IE 10]>
 <div class="alert-danger" role="alert">你的浏览器实在太太太旧了，放学别走，升级完浏览器再说！<a target="_blank" class="alert-link" href="http://browsehappy.com">立即升级</a></div>
 <![endif]-->
     <input id="nm-switch" type="hidden" value="true">
-    <header class="g-header">
+    <div class="visible">
+      <header class="g-header">
     <div class="g-logo">
-        <a href="/"></a>
+      <a href="/"></a>
     </div>
     <i id="menu-toggle" class="iconfont icon-menu"></i>
     <nav class="g-nav">
         <ul>
             
-            <li><a href="/">home</a></li>
+            <li><a href="/">主页</a></li>
             
-            <li><a href="/tags.html#Minecraft">Minecraft</a></li>
-            
-            <li><a href="/tags.html">tags</a></li>
+            <li><a href="/tags.html">标签</a></li>
             
         </ul>
     </nav>
 </header>
 
+
 <div class="g-banner tags-banner post-pattern-food bgcolor-default" data-theme="default">
-    <h2>TAGS</h2>
+    <h2>标签</h2>
 </div>
 
 <main class="tags-content">
@@ -65,12 +68,6 @@
             
             <a href="#整合包" class="tag">整合包</a>
             
-            <a href="#iOS开发" class="tag">iOS开发</a>
-            
-            <a href="#CornerStone" class="tag">CornerStone</a>
-            
-            <a href="#SVN" class="tag">SVN</a>
-            
             <a href="#Sponge" class="tag">Sponge</a>
             
             <a href="#内网" class="tag">内网</a>
@@ -81,28 +78,6 @@
             
             <a href="#Sublime" class="tag">Sublime</a>
             
-            <a href="#iOS" class="tag">iOS</a>
-            
-            <a href="#键盘" class="tag">键盘</a>
-            
-            <a href="#UI" class="tag">UI</a>
-            
-            <a href="#设计" class="tag">设计</a>
-            
-            <a href="#图标" class="tag">图标</a>
-            
-            <a href="#优盘" class="tag">优盘</a>
-            
-            <a href="#JavaScript" class="tag">JavaScript</a>
-            
-            <a href="#JS" class="tag">JS</a>
-            
-            <a href="#数据线" class="tag">数据线</a>
-            
-            <a href="#开关" class="tag">开关</a>
-            
-            <a href="#胡萝卜" class="tag">胡萝卜</a>
-            
             <a href="#指令" class="tag">指令</a>
             
             <a href="#McMyAdmin" class="tag">McMyAdmin</a>
@@ -111,37 +86,21 @@
             
             <a href="#汉化" class="tag">汉化</a>
             
-            <a href="#静态库" class="tag">静态库</a>
+            <a href="#iOS" class="tag">iOS</a>
             
             <a href="#TableViewCell" class="tag">TableViewCell</a>
             
-            <a href="#RAC" class="tag">RAC</a>
-            
-            <a href="#ReactiveCocoa" class="tag">ReactiveCocoa</a>
-            
             <a href="#Excel" class="tag">Excel</a>
-            
-            <a href="#Linux" class="tag">Linux</a>
-            
-            <a href="#FTP" class="tag">FTP</a>
             
             <a href="#CentOS" class="tag">CentOS</a>
             
-            <a href="#百度网盘" class="tag">百度网盘</a>
-            
-            <a href="#脚本" class="tag">脚本</a>
-            
-            <a href="#宏" class="tag">宏</a>
-            
             <a href="#小游戏" class="tag">小游戏</a>
-            
-            <a href="#aria2" class="tag">aria2</a>
-            
-            <a href="#下载" class="tag">下载</a>
             
             <a href="#我的世界" class="tag">我的世界</a>
             
             <a href="#我的世界中国版" class="tag">我的世界中国版</a>
+            
+            <a href="#杂文" class="tag">杂文</a>
             
         
         </li>
@@ -149,491 +108,319 @@
         <li>
             <span class="tag-name" id="Minecraft">「Minecraft」</span>
             
-            <a class="tag-post" href="/minecraft/2017/09/20/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8CPE%E4%B8%AD%E5%9B%BD%E7%89%88%E4%BD%93%E9%AA%8C%E8%AE%B0.html" title="我的世界PE中国版体验记">我的世界PE中国版体验记</a>
+            <a class="tag-post" href="/2017/09/20/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8CPE%E4%B8%AD%E5%9B%BD%E7%89%88%E4%BD%93%E9%AA%8C%E8%AE%B0.html" title="我的世界PE中国版体验记">我的世界PE中国版体验记</a>
             
-            <a class="tag-post" href="/minecraft/2017/03/01/Minecraft%E6%B8%B8%E6%88%8F%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%95%B4%E7%90%86.html" title="Minecraft游戏服务器整理">Minecraft游戏服务器整理</a>
+            <a class="tag-post" href="/2017/03/01/Minecraft%E6%B8%B8%E6%88%8F%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%95%B4%E7%90%86.html" title="Minecraft游戏服务器整理">Minecraft游戏服务器整理</a>
             
-            <a class="tag-post" href="/minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B%E7%B3%BB%E5%88%97/2016/10/12/CentOS7MMA.html" title="CentOS 7 使用McMyAdmin搭建Minecraft服务器">CentOS 7 使用McMyAdmin搭建Minecraft服务器</a>
+            <a class="tag-post" href="/2016/10/12/CentOS7MMA.html" title="CentOS 7 使用McMyAdmin搭建Minecraft服务器">CentOS 7 使用McMyAdmin搭建Minecraft服务器</a>
             
-            <a class="tag-post" href="/minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B%E7%B3%BB%E5%88%97/2016/05/30/McMyAdmin%E6%B1%89%E5%8C%96%E5%8C%85.html" title="McMyAdmin汉化包">McMyAdmin汉化包</a>
+            <a class="tag-post" href="/2016/05/30/McMyAdmin%E6%B1%89%E5%8C%96%E5%8C%85.html" title="McMyAdmin汉化包">McMyAdmin汉化包</a>
             
-            <a class="tag-post" href="/minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B%E7%B3%BB%E5%88%97/2016/05/27/Minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4%E6%95%B4%E7%90%86.html" title="Minecraft服务器常用指令整理及说明">Minecraft服务器常用指令整理及说明</a>
+            <a class="tag-post" href="/2016/05/27/Minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4%E6%95%B4%E7%90%86.html" title="Minecraft服务器常用指令整理及说明">Minecraft服务器常用指令整理及说明</a>
             
-            <a class="tag-post" href="/minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B%E7%B3%BB%E5%88%97/2016/04/23/Minecraft%E5%86%85%E7%BD%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E4%BB%8B%E7%BB%8D.html" title="Minecraft内网服务器解决方案介绍">Minecraft内网服务器解决方案介绍</a>
+            <a class="tag-post" href="/2016/04/23/Minecraft%E5%86%85%E7%BD%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E4%BB%8B%E7%BB%8D.html" title="Minecraft内网服务器解决方案介绍">Minecraft内网服务器解决方案介绍</a>
             
-            <a class="tag-post" href="/minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B%E7%B3%BB%E5%88%97/2016/04/23/Minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%97%AE%E9%A2%98%E6%94%B6%E9%9B%86.html" title="Minecraft服务器问题收集">Minecraft服务器问题收集</a>
+            <a class="tag-post" href="/2016/04/23/Minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%97%AE%E9%A2%98%E6%94%B6%E9%9B%86.html" title="Minecraft服务器问题收集">Minecraft服务器问题收集</a>
             
-            <a class="tag-post" href="/minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B%E7%B3%BB%E5%88%97/2016/04/22/Minecraft1.8%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B.html" title="Minecraft1.8服务器搭建教程">Minecraft1.8服务器搭建教程</a>
+            <a class="tag-post" href="/2016/04/22/Minecraft1.8%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B.html" title="Minecraft1.8服务器搭建教程">Minecraft1.8服务器搭建教程</a>
             
-            <a class="tag-post" href="/minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B%E7%B3%BB%E5%88%97/2016/04/20/Minecraft%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%95%B4%E5%90%88%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B.html" title="Minecraft客户端整合基础教程">Minecraft客户端整合基础教程</a>
+            <a class="tag-post" href="/2016/04/20/Minecraft%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%95%B4%E5%90%88%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B.html" title="Minecraft客户端整合基础教程">Minecraft客户端整合基础教程</a>
             
-            <a class="tag-post" href="/minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B%E7%B3%BB%E5%88%97/2016/04/17/Minecraft1.7%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B.html" title="Minecraft1.7服务器搭建教程">Minecraft1.7服务器搭建教程</a>
+            <a class="tag-post" href="/2016/04/17/Minecraft1.7%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B.html" title="Minecraft1.7服务器搭建教程">Minecraft1.7服务器搭建教程</a>
             
         </li>
         
-        </div>
+         
         
         <li>
             <span class="tag-name" id="教程">「教程」</span>
             
-            <a class="tag-post" href="/minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B%E7%B3%BB%E5%88%97/2016/04/23/Minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%97%AE%E9%A2%98%E6%94%B6%E9%9B%86.html" title="Minecraft服务器问题收集">Minecraft服务器问题收集</a>
+            <a class="tag-post" href="/2016/04/23/Minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%97%AE%E9%A2%98%E6%94%B6%E9%9B%86.html" title="Minecraft服务器问题收集">Minecraft服务器问题收集</a>
             
-            <a class="tag-post" href="/minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B%E7%B3%BB%E5%88%97/2016/04/17/Minecraft1.7%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B.html" title="Minecraft1.7服务器搭建教程">Minecraft1.7服务器搭建教程</a>
+            <a class="tag-post" href="/2016/04/17/Minecraft1.7%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B.html" title="Minecraft1.7服务器搭建教程">Minecraft1.7服务器搭建教程</a>
             
         </li>
         
-        </div>
+         
         
         <li>
             <span class="tag-name" id="服务器">「服务器」</span>
             
-            <a class="tag-post" href="/linux/2016/09/18/vsftpd%E9%94%99%E8%AF%AF553.html" title="FTP服务器：vsftpd 上传错误 553">FTP服务器：vsftpd 上传错误 553</a>
+            <a class="tag-post" href="/2016/05/27/Minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4%E6%95%B4%E7%90%86.html" title="Minecraft服务器常用指令整理及说明">Minecraft服务器常用指令整理及说明</a>
             
-            <a class="tag-post" href="/minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B%E7%B3%BB%E5%88%97/2016/05/27/Minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4%E6%95%B4%E7%90%86.html" title="Minecraft服务器常用指令整理及说明">Minecraft服务器常用指令整理及说明</a>
+            <a class="tag-post" href="/2016/04/23/Minecraft%E5%86%85%E7%BD%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E4%BB%8B%E7%BB%8D.html" title="Minecraft内网服务器解决方案介绍">Minecraft内网服务器解决方案介绍</a>
             
-            <a class="tag-post" href="/minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B%E7%B3%BB%E5%88%97/2016/04/23/Minecraft%E5%86%85%E7%BD%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E4%BB%8B%E7%BB%8D.html" title="Minecraft内网服务器解决方案介绍">Minecraft内网服务器解决方案介绍</a>
+            <a class="tag-post" href="/2016/04/23/Minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%97%AE%E9%A2%98%E6%94%B6%E9%9B%86.html" title="Minecraft服务器问题收集">Minecraft服务器问题收集</a>
             
-            <a class="tag-post" href="/minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B%E7%B3%BB%E5%88%97/2016/04/23/Minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%97%AE%E9%A2%98%E6%94%B6%E9%9B%86.html" title="Minecraft服务器问题收集">Minecraft服务器问题收集</a>
+            <a class="tag-post" href="/2016/04/22/Minecraft1.8%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B.html" title="Minecraft1.8服务器搭建教程">Minecraft1.8服务器搭建教程</a>
             
-            <a class="tag-post" href="/minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B%E7%B3%BB%E5%88%97/2016/04/22/Minecraft1.8%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B.html" title="Minecraft1.8服务器搭建教程">Minecraft1.8服务器搭建教程</a>
-            
-            <a class="tag-post" href="/minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B%E7%B3%BB%E5%88%97/2016/04/17/Minecraft1.7%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B.html" title="Minecraft1.7服务器搭建教程">Minecraft1.7服务器搭建教程</a>
+            <a class="tag-post" href="/2016/04/17/Minecraft1.7%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B.html" title="Minecraft1.7服务器搭建教程">Minecraft1.7服务器搭建教程</a>
             
         </li>
         
-        </div>
+         
         
         <li>
             <span class="tag-name" id="开服">「开服」</span>
             
-            <a class="tag-post" href="/minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B%E7%B3%BB%E5%88%97/2016/04/23/Minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%97%AE%E9%A2%98%E6%94%B6%E9%9B%86.html" title="Minecraft服务器问题收集">Minecraft服务器问题收集</a>
+            <a class="tag-post" href="/2016/04/23/Minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%97%AE%E9%A2%98%E6%94%B6%E9%9B%86.html" title="Minecraft服务器问题收集">Minecraft服务器问题收集</a>
             
-            <a class="tag-post" href="/minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B%E7%B3%BB%E5%88%97/2016/04/22/Minecraft1.8%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B.html" title="Minecraft1.8服务器搭建教程">Minecraft1.8服务器搭建教程</a>
+            <a class="tag-post" href="/2016/04/22/Minecraft1.8%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B.html" title="Minecraft1.8服务器搭建教程">Minecraft1.8服务器搭建教程</a>
             
-            <a class="tag-post" href="/minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B%E7%B3%BB%E5%88%97/2016/04/17/Minecraft1.7%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B.html" title="Minecraft1.7服务器搭建教程">Minecraft1.7服务器搭建教程</a>
+            <a class="tag-post" href="/2016/04/17/Minecraft1.7%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B.html" title="Minecraft1.7服务器搭建教程">Minecraft1.7服务器搭建教程</a>
             
         </li>
         
-        </div>
+         
         
         <li>
             <span class="tag-name" id="客户端">「客户端」</span>
             
-            <a class="tag-post" href="/minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B%E7%B3%BB%E5%88%97/2016/04/20/Minecraft%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%95%B4%E5%90%88%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B.html" title="Minecraft客户端整合基础教程">Minecraft客户端整合基础教程</a>
+            <a class="tag-post" href="/2016/04/20/Minecraft%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%95%B4%E5%90%88%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B.html" title="Minecraft客户端整合基础教程">Minecraft客户端整合基础教程</a>
             
         </li>
         
-        </div>
+         
         
         <li>
             <span class="tag-name" id="整合包">「整合包」</span>
             
-            <a class="tag-post" href="/minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B%E7%B3%BB%E5%88%97/2016/04/20/Minecraft%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%95%B4%E5%90%88%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B.html" title="Minecraft客户端整合基础教程">Minecraft客户端整合基础教程</a>
+            <a class="tag-post" href="/2016/04/20/Minecraft%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%95%B4%E5%90%88%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B.html" title="Minecraft客户端整合基础教程">Minecraft客户端整合基础教程</a>
             
         </li>
         
-        </div>
-        
-        <li>
-            <span class="tag-name" id="iOS开发">「iOS开发」</span>
-            
-            <a class="tag-post" href="/ios%E5%BC%80%E5%8F%91%E6%89%8B%E6%9C%AD/2016/04/21/%E8%AE%B0%E4%B8%80%E6%B4%BCCornerStone%E5%B0%8F%E5%9D%91.html" title="记一洼CornerStone小坑">记一洼CornerStone小坑</a>
-            
-        </li>
-        
-        </div>
-        
-        <li>
-            <span class="tag-name" id="CornerStone">「CornerStone」</span>
-            
-            <a class="tag-post" href="/ios%E5%BC%80%E5%8F%91%E6%89%8B%E6%9C%AD/2016/04/21/%E8%AE%B0%E4%B8%80%E6%B4%BCCornerStone%E5%B0%8F%E5%9D%91.html" title="记一洼CornerStone小坑">记一洼CornerStone小坑</a>
-            
-        </li>
-        
-        </div>
-        
-        <li>
-            <span class="tag-name" id="SVN">「SVN」</span>
-            
-            <a class="tag-post" href="/ios%E5%BC%80%E5%8F%91%E6%89%8B%E6%9C%AD/2016/04/21/%E8%AE%B0%E4%B8%80%E6%B4%BCCornerStone%E5%B0%8F%E5%9D%91.html" title="记一洼CornerStone小坑">记一洼CornerStone小坑</a>
-            
-        </li>
-        
-        </div>
+         
         
         <li>
             <span class="tag-name" id="Sponge">「Sponge」</span>
             
-            <a class="tag-post" href="/minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B%E7%B3%BB%E5%88%97/2016/04/22/Minecraft1.8%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B.html" title="Minecraft1.8服务器搭建教程">Minecraft1.8服务器搭建教程</a>
+            <a class="tag-post" href="/2016/04/22/Minecraft1.8%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B.html" title="Minecraft1.8服务器搭建教程">Minecraft1.8服务器搭建教程</a>
             
         </li>
         
-        </div>
+         
         
         <li>
             <span class="tag-name" id="内网">「内网」</span>
             
-            <a class="tag-post" href="/minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B%E7%B3%BB%E5%88%97/2016/04/23/Minecraft%E5%86%85%E7%BD%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E4%BB%8B%E7%BB%8D.html" title="Minecraft内网服务器解决方案介绍">Minecraft内网服务器解决方案介绍</a>
+            <a class="tag-post" href="/2016/04/23/Minecraft%E5%86%85%E7%BD%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E4%BB%8B%E7%BB%8D.html" title="Minecraft内网服务器解决方案介绍">Minecraft内网服务器解决方案介绍</a>
             
         </li>
         
-        </div>
+         
         
         <li>
             <span class="tag-name" id="TeamViewer">「TeamViewer」</span>
             
-            <a class="tag-post" href="/minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B%E7%B3%BB%E5%88%97/2016/04/23/Minecraft%E5%86%85%E7%BD%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E4%BB%8B%E7%BB%8D.html" title="Minecraft内网服务器解决方案介绍">Minecraft内网服务器解决方案介绍</a>
+            <a class="tag-post" href="/2016/04/23/Minecraft%E5%86%85%E7%BD%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E4%BB%8B%E7%BB%8D.html" title="Minecraft内网服务器解决方案介绍">Minecraft内网服务器解决方案介绍</a>
             
         </li>
         
-        </div>
+         
         
         <li>
             <span class="tag-name" id="花生壳">「花生壳」</span>
             
-            <a class="tag-post" href="/minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B%E7%B3%BB%E5%88%97/2016/04/23/Minecraft%E5%86%85%E7%BD%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E4%BB%8B%E7%BB%8D.html" title="Minecraft内网服务器解决方案介绍">Minecraft内网服务器解决方案介绍</a>
+            <a class="tag-post" href="/2016/04/23/Minecraft%E5%86%85%E7%BD%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E4%BB%8B%E7%BB%8D.html" title="Minecraft内网服务器解决方案介绍">Minecraft内网服务器解决方案介绍</a>
             
         </li>
         
-        </div>
+         
         
         <li>
             <span class="tag-name" id="Sublime">「Sublime」</span>
             
-            <a class="tag-post" href="/%E6%99%BA%E7%94%9F%E6%B4%BB/2016/05/06/SublimeText3%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E6%80%BB%E7%BB%93.html" title="Sublime Text 3 使用技巧总结">Sublime Text 3 使用技巧总结</a>
+            <a class="tag-post" href="/2016/05/06/SublimeText3%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E6%80%BB%E7%BB%93.html" title="Sublime Text 3 使用技巧总结">Sublime Text 3 使用技巧总结</a>
             
         </li>
         
-        </div>
-        
-        <li>
-            <span class="tag-name" id="iOS">「iOS」</span>
-            
-            <a class="tag-post" href="/minecraft/2017/09/20/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8CPE%E4%B8%AD%E5%9B%BD%E7%89%88%E4%BD%93%E9%AA%8C%E8%AE%B0.html" title="我的世界PE中国版体验记">我的世界PE中国版体验记</a>
-            
-            <a class="tag-post" href="/ios%E5%BC%80%E5%8F%91%E6%89%8B%E6%9C%AD/2017/02/28/iOS%E5%AE%8F%E6%94%B6%E9%9B%86.html" title="iOS宏收集">iOS宏收集</a>
-            
-            <a class="tag-post" href="/ios%E5%BC%80%E5%8F%91%E6%89%8B%E6%9C%AD/2016/07/26/ReactiveCocoa%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%BA%8C.html" title="ReactiveCocoa学习笔记（二）">ReactiveCocoa学习笔记（二）</a>
-            
-            <a class="tag-post" href="/ios%E5%BC%80%E5%8F%91%E6%89%8B%E6%9C%AD/2016/07/25/ReactiveCocoa%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%80.html" title="ReactiveCocoa学习笔记（一）">ReactiveCocoa学习笔记（一）</a>
-            
-            <a class="tag-post" href="/ios%E5%BC%80%E5%8F%91%E6%89%8B%E6%9C%AD/2016/07/13/TableViewCell%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%89%E9%92%AE%E5%AE%9A%E4%BD%8D.html" title="TableViewCell的自定义按钮定位">TableViewCell的自定义按钮定位</a>
-            
-            <a class="tag-post" href="/ios%E5%BC%80%E5%8F%91%E6%89%8B%E6%9C%AD/2016/06/14/%E6%B7%BB%E5%8A%A0%E9%9D%99%E6%80%81%E5%BA%93%E9%94%99%E8%AF%AFnotfound.html" title="Xcode添加静态库错误：library not found for">Xcode添加静态库错误：library not found for</a>
-            
-            <a class="tag-post" href="/ios%E5%BC%80%E5%8F%91%E6%89%8B%E6%9C%AD/2016/05/16/iOS%E4%B8%8EJavaScript%E4%BA%A4%E4%BA%92.html" title="iOS中UIWebView与JavaScript交互">iOS中UIWebView与JavaScript交互</a>
-            
-            <a class="tag-post" href="/ios%E5%BC%80%E5%8F%91%E6%89%8B%E6%9C%AD/2016/05/08/iOS%E9%94%AE%E7%9B%98%E5%A4%84%E7%90%86.html" title="iOS键盘处理">iOS键盘处理</a>
-            
-        </li>
-        
-        </div>
-        
-        <li>
-            <span class="tag-name" id="键盘">「键盘」</span>
-            
-            <a class="tag-post" href="/ios%E5%BC%80%E5%8F%91%E6%89%8B%E6%9C%AD/2016/05/08/iOS%E9%94%AE%E7%9B%98%E5%A4%84%E7%90%86.html" title="iOS键盘处理">iOS键盘处理</a>
-            
-        </li>
-        
-        </div>
-        
-        <li>
-            <span class="tag-name" id="UI">「UI」</span>
-            
-            <a class="tag-post" href="/ui%E8%AE%BE%E8%AE%A1/2016/07/23/UI%E7%BB%83%E4%B9%A0%E5%A4%A9%E6%B0%94%E5%9B%BE%E6%A0%87.html" title="UI练习：天气图标">UI练习：天气图标</a>
-            
-            <a class="tag-post" href="/ui%E8%AE%BE%E8%AE%A1/2016/05/26/UI%E7%BB%83%E4%B9%A0%E6%B0%B4%E6%B3%A2%E7%BA%B9%E5%9B%BE%E6%A0%87%E4%B8%A4%E6%9E%9A.html" title="UI练习：水波纹图标两枚">UI练习：水波纹图标两枚</a>
-            
-            <a class="tag-post" href="/ui%E8%AE%BE%E8%AE%A1/2016/05/21/UI%E7%BB%83%E4%B9%A0%E8%83%A1%E8%90%9D%E5%8D%9C.html" title="UI练习：胡萝卜">UI练习：胡萝卜</a>
-            
-            <a class="tag-post" href="/ui%E8%AE%BE%E8%AE%A1/2016/05/20/UI%E7%BB%83%E4%B9%A0knob%E5%BC%80%E5%85%B3.html" title="UI练习：knob开关">UI练习：knob开关</a>
-            
-            <a class="tag-post" href="/ui%E8%AE%BE%E8%AE%A1/2016/05/18/UI%E7%BB%83%E4%B9%A0%E6%95%B0%E6%8D%AE%E7%BA%BF.html" title="UI练习：苹果数据线">UI练习：苹果数据线</a>
-            
-            <a class="tag-post" href="/ui%E8%AE%BE%E8%AE%A1/2016/05/17/UI%E7%BB%83%E4%B9%A0downloading.html" title="UI练习：Downloading">UI练习：Downloading</a>
-            
-            <a class="tag-post" href="/ui%E8%AE%BE%E8%AE%A1/2016/05/12/UI%E7%BB%83%E4%B9%A0U%E7%9B%98.html" title="UI练习：PNY 优盘">UI练习：PNY 优盘</a>
-            
-            <a class="tag-post" href="/ui%E8%AE%BE%E8%AE%A1/2016/05/10/UI%E7%BB%83%E4%B9%A0ipod%E5%9B%BE%E6%A0%87.html" title="UI练习：iPod Shuffle 4 图标">UI练习：iPod Shuffle 4 图标</a>
-            
-        </li>
-        
-        </div>
-        
-        <li>
-            <span class="tag-name" id="设计">「设计」</span>
-            
-            <a class="tag-post" href="/ui%E8%AE%BE%E8%AE%A1/2016/05/17/UI%E7%BB%83%E4%B9%A0downloading.html" title="UI练习：Downloading">UI练习：Downloading</a>
-            
-            <a class="tag-post" href="/ui%E8%AE%BE%E8%AE%A1/2016/05/10/UI%E7%BB%83%E4%B9%A0ipod%E5%9B%BE%E6%A0%87.html" title="UI练习：iPod Shuffle 4 图标">UI练习：iPod Shuffle 4 图标</a>
-            
-        </li>
-        
-        </div>
-        
-        <li>
-            <span class="tag-name" id="图标">「图标」</span>
-            
-            <a class="tag-post" href="/ui%E8%AE%BE%E8%AE%A1/2016/07/23/UI%E7%BB%83%E4%B9%A0%E5%A4%A9%E6%B0%94%E5%9B%BE%E6%A0%87.html" title="UI练习：天气图标">UI练习：天气图标</a>
-            
-            <a class="tag-post" href="/ui%E8%AE%BE%E8%AE%A1/2016/05/26/UI%E7%BB%83%E4%B9%A0%E6%B0%B4%E6%B3%A2%E7%BA%B9%E5%9B%BE%E6%A0%87%E4%B8%A4%E6%9E%9A.html" title="UI练习：水波纹图标两枚">UI练习：水波纹图标两枚</a>
-            
-            <a class="tag-post" href="/ui%E8%AE%BE%E8%AE%A1/2016/05/10/UI%E7%BB%83%E4%B9%A0ipod%E5%9B%BE%E6%A0%87.html" title="UI练习：iPod Shuffle 4 图标">UI练习：iPod Shuffle 4 图标</a>
-            
-        </li>
-        
-        </div>
-        
-        <li>
-            <span class="tag-name" id="优盘">「优盘」</span>
-            
-            <a class="tag-post" href="/ui%E8%AE%BE%E8%AE%A1/2016/05/12/UI%E7%BB%83%E4%B9%A0U%E7%9B%98.html" title="UI练习：PNY 优盘">UI练习：PNY 优盘</a>
-            
-        </li>
-        
-        </div>
-        
-        <li>
-            <span class="tag-name" id="JavaScript">「JavaScript」</span>
-            
-            <a class="tag-post" href="/ios%E5%BC%80%E5%8F%91%E6%89%8B%E6%9C%AD/2016/05/16/iOS%E4%B8%8EJavaScript%E4%BA%A4%E4%BA%92.html" title="iOS中UIWebView与JavaScript交互">iOS中UIWebView与JavaScript交互</a>
-            
-        </li>
-        
-        </div>
-        
-        <li>
-            <span class="tag-name" id="JS">「JS」</span>
-            
-            <a class="tag-post" href="/ios%E5%BC%80%E5%8F%91%E6%89%8B%E6%9C%AD/2016/05/16/iOS%E4%B8%8EJavaScript%E4%BA%A4%E4%BA%92.html" title="iOS中UIWebView与JavaScript交互">iOS中UIWebView与JavaScript交互</a>
-            
-        </li>
-        
-        </div>
-        
-        <li>
-            <span class="tag-name" id="数据线">「数据线」</span>
-            
-            <a class="tag-post" href="/ui%E8%AE%BE%E8%AE%A1/2016/05/18/UI%E7%BB%83%E4%B9%A0%E6%95%B0%E6%8D%AE%E7%BA%BF.html" title="UI练习：苹果数据线">UI练习：苹果数据线</a>
-            
-        </li>
-        
-        </div>
-        
-        <li>
-            <span class="tag-name" id="开关">「开关」</span>
-            
-            <a class="tag-post" href="/ui%E8%AE%BE%E8%AE%A1/2016/05/20/UI%E7%BB%83%E4%B9%A0knob%E5%BC%80%E5%85%B3.html" title="UI练习：knob开关">UI练习：knob开关</a>
-            
-        </li>
-        
-        </div>
-        
-        <li>
-            <span class="tag-name" id="胡萝卜">「胡萝卜」</span>
-            
-            <a class="tag-post" href="/ui%E8%AE%BE%E8%AE%A1/2016/05/21/UI%E7%BB%83%E4%B9%A0%E8%83%A1%E8%90%9D%E5%8D%9C.html" title="UI练习：胡萝卜">UI练习：胡萝卜</a>
-            
-        </li>
-        
-        </div>
+         
         
         <li>
             <span class="tag-name" id="指令">「指令」</span>
             
-            <a class="tag-post" href="/minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B%E7%B3%BB%E5%88%97/2016/05/27/Minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4%E6%95%B4%E7%90%86.html" title="Minecraft服务器常用指令整理及说明">Minecraft服务器常用指令整理及说明</a>
+            <a class="tag-post" href="/2016/05/27/Minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4%E6%95%B4%E7%90%86.html" title="Minecraft服务器常用指令整理及说明">Minecraft服务器常用指令整理及说明</a>
             
         </li>
         
-        </div>
+         
         
         <li>
             <span class="tag-name" id="McMyAdmin">「McMyAdmin」</span>
             
-            <a class="tag-post" href="/minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B%E7%B3%BB%E5%88%97/2016/10/12/CentOS7MMA.html" title="CentOS 7 使用McMyAdmin搭建Minecraft服务器">CentOS 7 使用McMyAdmin搭建Minecraft服务器</a>
+            <a class="tag-post" href="/2016/10/12/CentOS7MMA.html" title="CentOS 7 使用McMyAdmin搭建Minecraft服务器">CentOS 7 使用McMyAdmin搭建Minecraft服务器</a>
             
-            <a class="tag-post" href="/minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B%E7%B3%BB%E5%88%97/2016/05/30/McMyAdmin%E6%B1%89%E5%8C%96%E5%8C%85.html" title="McMyAdmin汉化包">McMyAdmin汉化包</a>
+            <a class="tag-post" href="/2016/05/30/McMyAdmin%E6%B1%89%E5%8C%96%E5%8C%85.html" title="McMyAdmin汉化包">McMyAdmin汉化包</a>
             
         </li>
         
-        </div>
+         
         
         <li>
             <span class="tag-name" id="MCMA">「MCMA」</span>
             
-            <a class="tag-post" href="/minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B%E7%B3%BB%E5%88%97/2016/05/30/McMyAdmin%E6%B1%89%E5%8C%96%E5%8C%85.html" title="McMyAdmin汉化包">McMyAdmin汉化包</a>
+            <a class="tag-post" href="/2016/05/30/McMyAdmin%E6%B1%89%E5%8C%96%E5%8C%85.html" title="McMyAdmin汉化包">McMyAdmin汉化包</a>
             
         </li>
         
-        </div>
+         
         
         <li>
             <span class="tag-name" id="汉化">「汉化」</span>
             
-            <a class="tag-post" href="/minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B%E7%B3%BB%E5%88%97/2016/05/30/McMyAdmin%E6%B1%89%E5%8C%96%E5%8C%85.html" title="McMyAdmin汉化包">McMyAdmin汉化包</a>
+            <a class="tag-post" href="/2016/05/30/McMyAdmin%E6%B1%89%E5%8C%96%E5%8C%85.html" title="McMyAdmin汉化包">McMyAdmin汉化包</a>
             
         </li>
         
-        </div>
+         
         
         <li>
-            <span class="tag-name" id="静态库">「静态库」</span>
+            <span class="tag-name" id="iOS">「iOS」</span>
             
-            <a class="tag-post" href="/ios%E5%BC%80%E5%8F%91%E6%89%8B%E6%9C%AD/2016/06/14/%E6%B7%BB%E5%8A%A0%E9%9D%99%E6%80%81%E5%BA%93%E9%94%99%E8%AF%AFnotfound.html" title="Xcode添加静态库错误：library not found for">Xcode添加静态库错误：library not found for</a>
+            <a class="tag-post" href="/2017/09/20/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8CPE%E4%B8%AD%E5%9B%BD%E7%89%88%E4%BD%93%E9%AA%8C%E8%AE%B0.html" title="我的世界PE中国版体验记">我的世界PE中国版体验记</a>
+            
+            <a class="tag-post" href="/2016/07/13/TableViewCell%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%89%E9%92%AE%E5%AE%9A%E4%BD%8D.html" title="TableViewCell的自定义按钮定位">TableViewCell的自定义按钮定位</a>
             
         </li>
         
-        </div>
+         
         
         <li>
             <span class="tag-name" id="TableViewCell">「TableViewCell」</span>
             
-            <a class="tag-post" href="/ios%E5%BC%80%E5%8F%91%E6%89%8B%E6%9C%AD/2016/07/13/TableViewCell%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%89%E9%92%AE%E5%AE%9A%E4%BD%8D.html" title="TableViewCell的自定义按钮定位">TableViewCell的自定义按钮定位</a>
+            <a class="tag-post" href="/2016/07/13/TableViewCell%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%89%E9%92%AE%E5%AE%9A%E4%BD%8D.html" title="TableViewCell的自定义按钮定位">TableViewCell的自定义按钮定位</a>
             
         </li>
         
-        </div>
-        
-        <li>
-            <span class="tag-name" id="RAC">「RAC」</span>
-            
-            <a class="tag-post" href="/ios%E5%BC%80%E5%8F%91%E6%89%8B%E6%9C%AD/2016/07/26/ReactiveCocoa%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%BA%8C.html" title="ReactiveCocoa学习笔记（二）">ReactiveCocoa学习笔记（二）</a>
-            
-            <a class="tag-post" href="/ios%E5%BC%80%E5%8F%91%E6%89%8B%E6%9C%AD/2016/07/25/ReactiveCocoa%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%80.html" title="ReactiveCocoa学习笔记（一）">ReactiveCocoa学习笔记（一）</a>
-            
-        </li>
-        
-        </div>
-        
-        <li>
-            <span class="tag-name" id="ReactiveCocoa">「ReactiveCocoa」</span>
-            
-            <a class="tag-post" href="/ios%E5%BC%80%E5%8F%91%E6%89%8B%E6%9C%AD/2016/07/26/ReactiveCocoa%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%BA%8C.html" title="ReactiveCocoa学习笔记（二）">ReactiveCocoa学习笔记（二）</a>
-            
-            <a class="tag-post" href="/ios%E5%BC%80%E5%8F%91%E6%89%8B%E6%9C%AD/2016/07/25/ReactiveCocoa%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%80.html" title="ReactiveCocoa学习笔记（一）">ReactiveCocoa学习笔记（一）</a>
-            
-        </li>
-        
-        </div>
+         
         
         <li>
             <span class="tag-name" id="Excel">「Excel」</span>
             
-            <a class="tag-post" href="/%E6%99%BA%E7%94%9F%E6%B4%BB/2016/08/23/Excel%E7%9A%84%E5%AE%8F%E7%AE%80%E5%8D%95%E5%AE%9E%E7%94%A8.html" title="使用 Excel 宏进行简单统计">使用 Excel 宏进行简单统计</a>
+            <a class="tag-post" href="/2016/08/23/Excel%E7%9A%84%E5%AE%8F%E7%AE%80%E5%8D%95%E5%AE%9E%E7%94%A8.html" title="使用 Excel 宏进行简单统计">使用 Excel 宏进行简单统计</a>
             
         </li>
         
-        </div>
-        
-        <li>
-            <span class="tag-name" id="Linux">「Linux」</span>
-            
-            <a class="tag-post" href="/linux/2016/09/18/vsftpd%E9%94%99%E8%AF%AF553.html" title="FTP服务器：vsftpd 上传错误 553">FTP服务器：vsftpd 上传错误 553</a>
-            
-        </li>
-        
-        </div>
-        
-        <li>
-            <span class="tag-name" id="FTP">「FTP」</span>
-            
-            <a class="tag-post" href="/linux/2016/09/18/vsftpd%E9%94%99%E8%AF%AF553.html" title="FTP服务器：vsftpd 上传错误 553">FTP服务器：vsftpd 上传错误 553</a>
-            
-        </li>
-        
-        </div>
+         
         
         <li>
             <span class="tag-name" id="CentOS">「CentOS」</span>
             
-            <a class="tag-post" href="/minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B%E7%B3%BB%E5%88%97/2016/10/12/CentOS7MMA.html" title="CentOS 7 使用McMyAdmin搭建Minecraft服务器">CentOS 7 使用McMyAdmin搭建Minecraft服务器</a>
+            <a class="tag-post" href="/2016/10/12/CentOS7MMA.html" title="CentOS 7 使用McMyAdmin搭建Minecraft服务器">CentOS 7 使用McMyAdmin搭建Minecraft服务器</a>
             
         </li>
         
-        </div>
-        
-        <li>
-            <span class="tag-name" id="百度网盘">「百度网盘」</span>
-            
-            <a class="tag-post" href="/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/2017/05/03/macOS%E4%BD%BF%E7%94%A8Aria2.html" title="macOS使用Aria2">macOS使用Aria2</a>
-            
-            <a class="tag-post" href="/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/2017/02/18/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E9%AB%98%E9%80%9F%E4%B8%8B%E8%BD%BD%E6%96%B9%E6%A1%88.html" title="百度网盘高速下载方案">百度网盘高速下载方案</a>
-            
-        </li>
-        
-        </div>
-        
-        <li>
-            <span class="tag-name" id="脚本">「脚本」</span>
-            
-            <a class="tag-post" href="/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/2017/02/18/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E9%AB%98%E9%80%9F%E4%B8%8B%E8%BD%BD%E6%96%B9%E6%A1%88.html" title="百度网盘高速下载方案">百度网盘高速下载方案</a>
-            
-        </li>
-        
-        </div>
-        
-        <li>
-            <span class="tag-name" id="宏">「宏」</span>
-            
-            <a class="tag-post" href="/ios%E5%BC%80%E5%8F%91%E6%89%8B%E6%9C%AD/2017/02/28/iOS%E5%AE%8F%E6%94%B6%E9%9B%86.html" title="iOS宏收集">iOS宏收集</a>
-            
-        </li>
-        
-        </div>
+         
         
         <li>
             <span class="tag-name" id="小游戏">「小游戏」</span>
             
-            <a class="tag-post" href="/minecraft/2017/03/01/Minecraft%E6%B8%B8%E6%88%8F%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%95%B4%E7%90%86.html" title="Minecraft游戏服务器整理">Minecraft游戏服务器整理</a>
+            <a class="tag-post" href="/2017/03/01/Minecraft%E6%B8%B8%E6%88%8F%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%95%B4%E7%90%86.html" title="Minecraft游戏服务器整理">Minecraft游戏服务器整理</a>
             
         </li>
         
-        </div>
-        
-        <li>
-            <span class="tag-name" id="aria2">「aria2」</span>
-            
-            <a class="tag-post" href="/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/2017/05/03/macOS%E4%BD%BF%E7%94%A8Aria2.html" title="macOS使用Aria2">macOS使用Aria2</a>
-            
-        </li>
-        
-        </div>
-        
-        <li>
-            <span class="tag-name" id="下载">「下载」</span>
-            
-            <a class="tag-post" href="/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/2017/05/03/macOS%E4%BD%BF%E7%94%A8Aria2.html" title="macOS使用Aria2">macOS使用Aria2</a>
-            
-        </li>
-        
-        </div>
+         
         
         <li>
             <span class="tag-name" id="我的世界">「我的世界」</span>
             
-            <a class="tag-post" href="/minecraft/2017/09/20/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8CPE%E4%B8%AD%E5%9B%BD%E7%89%88%E4%BD%93%E9%AA%8C%E8%AE%B0.html" title="我的世界PE中国版体验记">我的世界PE中国版体验记</a>
+            <a class="tag-post" href="/2017/09/20/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8CPE%E4%B8%AD%E5%9B%BD%E7%89%88%E4%BD%93%E9%AA%8C%E8%AE%B0.html" title="我的世界PE中国版体验记">我的世界PE中国版体验记</a>
             
         </li>
         
-        </div>
+         
         
         <li>
             <span class="tag-name" id="我的世界中国版">「我的世界中国版」</span>
             
-            <a class="tag-post" href="/minecraft/2017/09/20/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8CPE%E4%B8%AD%E5%9B%BD%E7%89%88%E4%BD%93%E9%AA%8C%E8%AE%B0.html" title="我的世界PE中国版体验记">我的世界PE中国版体验记</a>
+            <a class="tag-post" href="/2017/09/20/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8CPE%E4%B8%AD%E5%9B%BD%E7%89%88%E4%BD%93%E9%AA%8C%E8%AE%B0.html" title="我的世界PE中国版体验记">我的世界PE中国版体验记</a>
             
         </li>
         
-        </div>
+         
+        
+        <li>
+            <span class="tag-name" id="杂文">「杂文」</span>
+            
+            <a class="tag-post" href="/2018/02/08/%E4%B9%85%E5%88%AB%E5%8D%9A%E5%AE%A2.html" title="久别博客">久别博客</a>
+            
+        </li>
+        
+         
         
     </ul>
 </main>
     
+
+  <!--
+Author: Ray-Eldath
+refer to:
+ - https://github.com/theme-next/hexo-theme-next/blob/master/source/js/src/utils.js
+ - https://jingyan.baidu.com/article/b2c186c83ec846c46ef6ff80.html
+ - http://www.bkjia.com/jQuery/449205.html
+-->
+<style media="screen">
+  .scroll {
+    z-index: 10000;
+    display: none;
+    width: 56px;
+    height: 24px;
+    background: #222;
+    color: #fff;
+    line-height: 24px;
+    text-align: center;
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+</style>
+<div class="scroll">
+  <i class="fa fa-arrow-up"></i>
+  <span class="scrollpercent"></span><span> %</span>
+</div>
+
+<script src="/assets/js/util.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    if (utils.isMobile()) {
+      $('.scroll').hide();
+      return;
+    }
+    $(window).scroll(function() {
+      let scrollValue = $(window).scrollTop();
+
+      var scrollPercentRounded = Math.round((scrollValue / utils.getContentVisibilityHeight()) * 100);
+      var scrollPercentMaxed = (scrollPercentRounded > 100) ? 100 : scrollPercentRounded;
+
+      $('.scrollpercent').html(scrollPercentMaxed);
+      scrollValue > 100 ? $('.scroll').fadeIn() : $('.scroll').fadeOut();
+    });
+
+    $('.scroll').click(function() {
+      $('html, body').animate({
+        scrollTop: 0
+      }, 300);
+    })
+  })
+</script>
+
+
+
 <footer class="g-footer">
-    <section>LongerONE的博客 © 2017</section>
-    <section>Powered by <a href="//jekyllrb.com">Jekyll</a> | <a href="https://github.com/kaeyleo/jekyll-theme-H2O">Theme H2O</a></section>
+  <section>LongerONE的博客 ©
+  
+  
+    2017
+    -
+  
+  2018
+  </section>
+  <section>Powered by <a href="//jekyllrb.com">Jekyll</a> | <a href="https://github.com/kaeyleo/jekyll-theme-H2O">Theme H2O</a></section>
 </footer>
+
+    </div>
     <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
     <script src="/assets/js/prism.js"></script>
     <script src="/assets/js/index.min.js"></script>

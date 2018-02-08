@@ -1,189 +1,87 @@
 [
   
     {
-      "title"    : "我的世界PE中国版体验记",
-      "tags"     : "Minecraft 我的世界 我的世界中国版 iOS",
-      "url"      : "/minecraft/2017/09/20/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8CPE%E4%B8%AD%E5%9B%BD%E7%89%88%E4%BD%93%E9%AA%8C%E8%AE%B0.html"
+      "title"    : "久别博客",
+      "tags"     : "杂文",
+      "url"      : "/2018/02/08/%E4%B9%85%E5%88%AB%E5%8D%9A%E5%AE%A2.html"
     } ,
   
     {
-      "title"    : "macOS使用Aria2",
-      "tags"     : "百度网盘 aria2 下载",
-      "url"      : "/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/2017/05/03/macOS%E4%BD%BF%E7%94%A8Aria2.html"
+      "title"    : "我的世界PE中国版体验记",
+      "tags"     : "Minecraft 我的世界 我的世界中国版 iOS",
+      "url"      : "/2017/09/20/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8CPE%E4%B8%AD%E5%9B%BD%E7%89%88%E4%BD%93%E9%AA%8C%E8%AE%B0.html"
     } ,
   
     {
       "title"    : "Minecraft游戏服务器整理",
       "tags"     : "Minecraft 小游戏",
-      "url"      : "/minecraft/2017/03/01/Minecraft%E6%B8%B8%E6%88%8F%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%95%B4%E7%90%86.html"
-    } ,
-  
-    {
-      "title"    : "iOS宏收集",
-      "tags"     : "iOS 宏",
-      "url"      : "/ios%E5%BC%80%E5%8F%91%E6%89%8B%E6%9C%AD/2017/02/28/iOS%E5%AE%8F%E6%94%B6%E9%9B%86.html"
-    } ,
-  
-    {
-      "title"    : "百度网盘高速下载方案",
-      "tags"     : "百度网盘 脚本",
-      "url"      : "/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/2017/02/18/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E9%AB%98%E9%80%9F%E4%B8%8B%E8%BD%BD%E6%96%B9%E6%A1%88.html"
+      "url"      : "/2017/03/01/Minecraft%E6%B8%B8%E6%88%8F%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%95%B4%E7%90%86.html"
     } ,
   
     {
       "title"    : "CentOS 7 使用McMyAdmin搭建Minecraft服务器",
       "tags"     : "CentOS McMyAdmin Minecraft",
-      "url"      : "/minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B%E7%B3%BB%E5%88%97/2016/10/12/CentOS7MMA.html"
-    } ,
-  
-    {
-      "title"    : "FTP服务器：vsftpd 上传错误 553",
-      "tags"     : "Linux 服务器 FTP",
-      "url"      : "/linux/2016/09/18/vsftpd%E9%94%99%E8%AF%AF553.html"
+      "url"      : "/2016/10/12/CentOS7MMA.html"
     } ,
   
     {
       "title"    : "使用 Excel 宏进行简单统计",
       "tags"     : "Excel",
-      "url"      : "/%E6%99%BA%E7%94%9F%E6%B4%BB/2016/08/23/Excel%E7%9A%84%E5%AE%8F%E7%AE%80%E5%8D%95%E5%AE%9E%E7%94%A8.html"
-    } ,
-  
-    {
-      "title"    : "ReactiveCocoa学习笔记（二）",
-      "tags"     : "iOS RAC ReactiveCocoa",
-      "url"      : "/ios%E5%BC%80%E5%8F%91%E6%89%8B%E6%9C%AD/2016/07/26/ReactiveCocoa%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%BA%8C.html"
-    } ,
-  
-    {
-      "title"    : "ReactiveCocoa学习笔记（一）",
-      "tags"     : "iOS RAC ReactiveCocoa",
-      "url"      : "/ios%E5%BC%80%E5%8F%91%E6%89%8B%E6%9C%AD/2016/07/25/ReactiveCocoa%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%80.html"
-    } ,
-  
-    {
-      "title"    : "UI练习：天气图标",
-      "tags"     : "UI 图标",
-      "url"      : "/ui%E8%AE%BE%E8%AE%A1/2016/07/23/UI%E7%BB%83%E4%B9%A0%E5%A4%A9%E6%B0%94%E5%9B%BE%E6%A0%87.html"
+      "url"      : "/2016/08/23/Excel%E7%9A%84%E5%AE%8F%E7%AE%80%E5%8D%95%E5%AE%9E%E7%94%A8.html"
     } ,
   
     {
       "title"    : "TableViewCell的自定义按钮定位",
       "tags"     : "iOS TableViewCell",
-      "url"      : "/ios%E5%BC%80%E5%8F%91%E6%89%8B%E6%9C%AD/2016/07/13/TableViewCell%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%89%E9%92%AE%E5%AE%9A%E4%BD%8D.html"
-    } ,
-  
-    {
-      "title"    : "Xcode添加静态库错误：library not found for",
-      "tags"     : "iOS 静态库",
-      "url"      : "/ios%E5%BC%80%E5%8F%91%E6%89%8B%E6%9C%AD/2016/06/14/%E6%B7%BB%E5%8A%A0%E9%9D%99%E6%80%81%E5%BA%93%E9%94%99%E8%AF%AFnotfound.html"
+      "url"      : "/2016/07/13/TableViewCell%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%89%E9%92%AE%E5%AE%9A%E4%BD%8D.html"
     } ,
   
     {
       "title"    : "McMyAdmin汉化包",
       "tags"     : "Minecraft McMyAdmin MCMA 汉化",
-      "url"      : "/minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B%E7%B3%BB%E5%88%97/2016/05/30/McMyAdmin%E6%B1%89%E5%8C%96%E5%8C%85.html"
+      "url"      : "/2016/05/30/McMyAdmin%E6%B1%89%E5%8C%96%E5%8C%85.html"
     } ,
   
     {
       "title"    : "Minecraft服务器常用指令整理及说明",
       "tags"     : "Minecraft 服务器 指令",
-      "url"      : "/minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B%E7%B3%BB%E5%88%97/2016/05/27/Minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4%E6%95%B4%E7%90%86.html"
-    } ,
-  
-    {
-      "title"    : "UI练习：水波纹图标两枚",
-      "tags"     : "UI 图标",
-      "url"      : "/ui%E8%AE%BE%E8%AE%A1/2016/05/26/UI%E7%BB%83%E4%B9%A0%E6%B0%B4%E6%B3%A2%E7%BA%B9%E5%9B%BE%E6%A0%87%E4%B8%A4%E6%9E%9A.html"
-    } ,
-  
-    {
-      "title"    : "UI练习：胡萝卜",
-      "tags"     : "UI 胡萝卜",
-      "url"      : "/ui%E8%AE%BE%E8%AE%A1/2016/05/21/UI%E7%BB%83%E4%B9%A0%E8%83%A1%E8%90%9D%E5%8D%9C.html"
-    } ,
-  
-    {
-      "title"    : "UI练习：knob开关",
-      "tags"     : "UI 开关",
-      "url"      : "/ui%E8%AE%BE%E8%AE%A1/2016/05/20/UI%E7%BB%83%E4%B9%A0knob%E5%BC%80%E5%85%B3.html"
-    } ,
-  
-    {
-      "title"    : "UI练习：苹果数据线",
-      "tags"     : "UI 数据线",
-      "url"      : "/ui%E8%AE%BE%E8%AE%A1/2016/05/18/UI%E7%BB%83%E4%B9%A0%E6%95%B0%E6%8D%AE%E7%BA%BF.html"
-    } ,
-  
-    {
-      "title"    : "UI练习：Downloading",
-      "tags"     : "UI 设计",
-      "url"      : "/ui%E8%AE%BE%E8%AE%A1/2016/05/17/UI%E7%BB%83%E4%B9%A0downloading.html"
-    } ,
-  
-    {
-      "title"    : "iOS中UIWebView与JavaScript交互",
-      "tags"     : "iOS JavaScript JS",
-      "url"      : "/ios%E5%BC%80%E5%8F%91%E6%89%8B%E6%9C%AD/2016/05/16/iOS%E4%B8%8EJavaScript%E4%BA%A4%E4%BA%92.html"
-    } ,
-  
-    {
-      "title"    : "UI练习：PNY 优盘",
-      "tags"     : "UI 优盘",
-      "url"      : "/ui%E8%AE%BE%E8%AE%A1/2016/05/12/UI%E7%BB%83%E4%B9%A0U%E7%9B%98.html"
-    } ,
-  
-    {
-      "title"    : "UI练习：iPod Shuffle 4 图标",
-      "tags"     : "UI 设计 图标",
-      "url"      : "/ui%E8%AE%BE%E8%AE%A1/2016/05/10/UI%E7%BB%83%E4%B9%A0ipod%E5%9B%BE%E6%A0%87.html"
-    } ,
-  
-    {
-      "title"    : "iOS键盘处理",
-      "tags"     : "iOS 键盘",
-      "url"      : "/ios%E5%BC%80%E5%8F%91%E6%89%8B%E6%9C%AD/2016/05/08/iOS%E9%94%AE%E7%9B%98%E5%A4%84%E7%90%86.html"
+      "url"      : "/2016/05/27/Minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4%E6%95%B4%E7%90%86.html"
     } ,
   
     {
       "title"    : "Sublime Text 3 使用技巧总结",
       "tags"     : "Sublime",
-      "url"      : "/%E6%99%BA%E7%94%9F%E6%B4%BB/2016/05/06/SublimeText3%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E6%80%BB%E7%BB%93.html"
+      "url"      : "/2016/05/06/SublimeText3%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E6%80%BB%E7%BB%93.html"
     } ,
   
     {
       "title"    : "Minecraft内网服务器解决方案介绍",
       "tags"     : "Minecraft 服务器 内网 TeamViewer 花生壳",
-      "url"      : "/minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B%E7%B3%BB%E5%88%97/2016/04/23/Minecraft%E5%86%85%E7%BD%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E4%BB%8B%E7%BB%8D.html"
+      "url"      : "/2016/04/23/Minecraft%E5%86%85%E7%BD%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E4%BB%8B%E7%BB%8D.html"
     } ,
   
     {
       "title"    : "Minecraft服务器问题收集",
       "tags"     : "Minecraft 服务器 开服 教程",
-      "url"      : "/minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B%E7%B3%BB%E5%88%97/2016/04/23/Minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%97%AE%E9%A2%98%E6%94%B6%E9%9B%86.html"
+      "url"      : "/2016/04/23/Minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%97%AE%E9%A2%98%E6%94%B6%E9%9B%86.html"
     } ,
   
     {
       "title"    : "Minecraft1.8服务器搭建教程",
       "tags"     : "Minecraft 服务器 开服 Sponge",
-      "url"      : "/minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B%E7%B3%BB%E5%88%97/2016/04/22/Minecraft1.8%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B.html"
-    } ,
-  
-    {
-      "title"    : "记一洼CornerStone小坑",
-      "tags"     : "iOS开发 CornerStone SVN",
-      "url"      : "/ios%E5%BC%80%E5%8F%91%E6%89%8B%E6%9C%AD/2016/04/21/%E8%AE%B0%E4%B8%80%E6%B4%BCCornerStone%E5%B0%8F%E5%9D%91.html"
+      "url"      : "/2016/04/22/Minecraft1.8%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B.html"
     } ,
   
     {
       "title"    : "Minecraft客户端整合基础教程",
       "tags"     : "Minecraft 客户端 整合包",
-      "url"      : "/minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B%E7%B3%BB%E5%88%97/2016/04/20/Minecraft%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%95%B4%E5%90%88%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B.html"
+      "url"      : "/2016/04/20/Minecraft%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%95%B4%E5%90%88%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B.html"
     } ,
   
     {
       "title"    : "Minecraft1.7服务器搭建教程",
       "tags"     : "Minecraft 教程 服务器 开服",
-      "url"      : "/minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B%E7%B3%BB%E5%88%97/2016/04/17/Minecraft1.7%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B.html"
+      "url"      : "/2016/04/17/Minecraft1.7%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B.html"
     } 
   
 ]
