@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>陆吾隐私政策</title>
+  <style>
+    :root {
+      --bg: #f4f7fb;
+      --card: #ffffff;
+      --text: #1f2a44;
+      --muted: #667085;
+      --line: #e8eef6;
+      --brand: #3a7cff;
+      --chip: #eef4ff;
+      --chip-text: #1d4ed8;
+      --maxw: min(920px, 94vw);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: radial-gradient(circle at top, #f8fbff 0, var(--bg) 40%, #edf3fb 100%);
+      color: var(--text);
+      font: 500 15px/1.7 -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      padding: 28px 16px 40px;
+      display: flex;
+      justify-content: center;
+    }
+    .wrap {
+      width: var(--maxw);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .hero {
+      background: linear-gradient(140deg, #0f172a, #1f3a93 45%, #2563eb);
+      color: #fff;
+      border-radius: 22px;
+      padding: 26px 22px;
+      box-shadow: 0 20px 50px rgba(14, 31, 77, 0.2);
+    }
+    h1 {
+      margin: 0 0 10px;
+      font-size: 30px;
+      line-height: 1.2;
+      letter-spacing: 0.2px;
+      font-weight: 700;
+    }
+    .meta {
+      margin: 10px 0 0;
+      color: #d6e0fb;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 14px;
+    }
+    .meta span {
+      display: inline-flex;
+      align-items: center;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.16);
+      font-size: 12px;
+    }
+    .section {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 18px 18px;
+      box-shadow: 0 14px 35px rgba(31, 42, 68, 0.06);
+    }
+    h2 {
+      margin: 0 0 10px;
+      font-size: 18px;
+      color: #0f172a;
+    }
+    p { margin: 0 0 10px; color: var(--muted); }
+    ul {
+      margin: 8px 0 0;
+      padding-left: 20px;
+      color: var(--muted);
+    }
+    li { margin: 6px 0; }
+    .chips {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      background: var(--chip);
+      color: var(--chip-text);
+      border-radius: 999px;
+      font-size: 12px;
+      padding: 4px 10px;
+      font-weight: 600;
+    }
+    .notice {
+      color: #475467;
+      font-size: 13px;
+      border-left: 3px solid var(--brand);
+      padding: 8px 12px;
+      background: #f3f7ff;
+      border-radius: 10px;
+    }
+    a { color: #1d4ed8; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <h1>陆吾（LuWu）隐私政策</h1>
+      <p style="margin: 0; color: #e2e8ff;">版本：2026.06.24 · 最后更新：2026-06-24</p>
+      <div class="meta">
+        <span>应用版本：iOS 文件管理与加密工具</span>
+        <span>生效范围：陆吾 iOS 客户端与关联服务</span>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>1. 我们收集什么</h2>
+      <p>为使应用可用，我们仅在本机和你授权的范围内处理以下信息：</p>
+      <ul>
+        <li>用户在“文件”列表中查看或导入的文件元数据：文件名、类型、大小、路径、修改时间。</li>
+        <li>用户在应用内的选择行为：加密、移入保险箱、恢复、删除、预览、Wi‑Fi 上传记录。</li>
+        <li>应用偏好设置：语言、主题、保险箱状态、加密备份设置。</li>
+        <li>通过 Wi‑Fi 传输时的上传任务状态（如任务名、大小、进度）。</li>
+      </ul>
+      <p>文件内容不作为独立“采集列表”上传，不在后台长期上传。</p>
+      <div class="notice">未获得你的明确操作授权前，应用不会读取你未允许访问的文件。</div>
+    </section>
+
+    <section class="section">
+      <h2>2. 数据如何使用</h2>
+      <p>所有核心处理都围绕以下目标：</p>
+      <ul>
+        <li>在本地完成文件列表管理、媒体预览与解密/加密流程。</li>
+        <li>在用户明确选择时，将文件加密为 LWEF，并支持主密码或文件密码解密。</li>
+        <li>在保险箱内对敏感文件进行隔离管理，不在关闭状态展示内容。</li>
+        <li>在用户启用时进行 iCloud 备份主密码数据的同步与恢复流程。</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>3. 存储位置与保存期限</h2>
+      <ul>
+        <li>主文件与文档默认保存在本机应用容器目录（Documents、Caches）供你管理。</li>
+        <li>临时文件和上传缓存在任务完成后清理，不会长期保留。</li>
+        <li>如你未开启 iCloud 同步，这些信息不会上传到 iCloud。</li>
+        <li>你可随时删除本地文件、清空缓存或卸载应用以清理数据。</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>4. 权限与网络</h2>
+      <ul>
+        <li>文件读取/写入：仅用于读取你选择导入的文件、显示与更新列表。</li>
+        <li>相机胶卷/照片/相机相关权限：仅当你在系统层面选择相关内容时出现对应弹窗。</li>
+        <li>Wi‑Fi 传输功能会在本机启动局域网传输服务，仅用于接收上传文件；文件在你同意操作后写入本地。</li>
+      </ul>
+      <div class="chips">
+        <span class="chip">本地处理优先</span>
+        <span class="chip">最小权限</span>
+        <span class="chip">加密优先</span>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>5. 第三方服务与共享</h2>
+      <p>陆吾不主动向第三方出售、租赁或交易你的个人数据；未在此功能内接入广告追踪 SDK。</p>
+      <ul>
+        <li>应用运行依赖平台系统能力（如 Apple 认证、钥匙串、iCloud、系统文件框架）。</li>
+        <li>仅在你开启了 iCloud 备份时，同步你的备份配置与恢复入口数据；未开启不进行该同步。</li>
+      </ul>
+      <p>除法律要求、司法程序外，不会披露你的私有文件内容给第三方。</p>
+    </section>
+
+    <section class="section">
+      <h2>6. 你的控制权</h2>
+      <ul>
+        <li>可在设置中关闭或更改加密备份策略。</li>
+        <li>可随时清除保险箱、删除文件、移除文件记录与上传记录。</li>
+        <li>可修改语言、界面偏好，并在系统设置中重置相关应用权限。</li>
+      </ul>
+      <p>若你对隐私有疑问，可通过应用商店反馈通道联系我们。</p>
+    </section>
+
+    <section class="section">
+      <h2>7. 政策更新</h2>
+      <p>当隐私策略发生变更时，我们会更新本页面并提升版本号。你首次启动新版本后，需再次确认最新版策略。</p>
+      <p>本页内容可按版本持续更新，便于后续同步最新说明。</p>
+    </section>
+  </div>
+</body>
+</html>
